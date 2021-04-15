@@ -1,0 +1,61 @@
+@import "../../assets/styles/variables.scss";
+
+.SearchBox {
+  background-color: $ml-color-yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 50px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 40px;   
+  }
+
+  &__meli_logo { 
+    margin-right: 10px;
+    height: 100%;
+        
+  }
+
+  &__search_input {
+    padding: 4px;
+    width: 100%;
+    font-size: 18px;
+    border: 0;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    height: 100%;
+  }
+
+  &__search_input:focus {
+    outline: none;
+  }
+
+  &__search_button {
+    padding: 5px;
+    background-color: $ml-color-gray-3;
+    border: 0;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    cursor: pointer;
+    height: 100%;
+    width: 50px;
+  }
+
+  &__search_button {
+    outline: none;
+  }
+
+  &__search_icon {
+    height: 60%;
+  }
+}

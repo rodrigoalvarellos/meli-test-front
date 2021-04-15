@@ -1,0 +1,13 @@
+@import '../../assets/styles/variables.scss';
+
+.Breadcrumbs {
+    width: 70%;
+    padding: 10px 0;
+    margin-top: 10px;
+
+    &__link {
+        color: $ml-color-gray-2;
+        margin-right: 10px;
+    }
+
+}
