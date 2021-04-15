@@ -1,0 +1,54 @@
+@import "../../assets/styles/variables.scss";
+
+.ListItemsItem {
+  border: 1px solid red;
+  //   height: 212px;
+  display: flex;
+
+  &__image {
+    background-color: red;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    margin: 16px;
+    height: 180px;
+    width: 180px;
+  }
+
+  &__content_wrapper {
+    border: 1px solid blue;
+    flex-grow: 1;
+    margin: 16px 16px 16px 0;
+    // height: 100%;
+  }
+
+  &__price_wrapper {
+    height: 24px;
+  }
+
+  &__price {
+    font-size: $ml-font-size-24;
+    margin-right: 20px;
+    font-weight: 500;
+  }
+
+  &__shipping {
+    // height: 100%;
+    // display: inline-block;
+  }
+
+  &__location_wrapper {
+      display: flex;
+      justify-content: flex-end;
+  }
+
+  &__location{
+   color: $ml-color-gray-2;
+   font-size: $ml-font-size-12;
+  }
+
+  &__title {
+    font-size: $ml-font-size-18;
+    width: 70%;
+  }
+}
