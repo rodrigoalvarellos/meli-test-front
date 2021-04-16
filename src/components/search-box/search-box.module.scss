@@ -1,11 +1,20 @@
 @import "../../assets/styles/variables.scss";
+@import "../../assets/styles/mixins/mixins.scss";
+
+
+$sb-width-xl: $ml-width-xl;
+$sb-width-md: $ml-width-md;
+$sb-width-sm: $ml-width-sm;
+
+$sb-border-radius: $ml-border-radius;
+
 
 .SearchBox {
   background-color: $ml-color-yellow;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 50px;
   padding: 5px;
 
@@ -13,28 +22,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70%;
+    width: $sb-width-xl;
     height: 35px;   
   }
 
   &__meli_logo { 
     margin-right: 25px;
-    height: 100%;
-        
+    height: 100%;        
   }
 
   &__search_input {
     border: 0;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
+    border-top-left-radius: $sb-border-radius;
+    border-bottom-left-radius: $sb-border-radius;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
-    color: $ml-color-gray-1;
-    font-family: inherit;
-    font-size: $ml-font-size-18;
+    font-family: inherit;   
     padding: 4px 15px;
     height: 100%;
     width: 100%;
+    @include text-format(18px, $ml-color-text-secondary);
   }
 
   &__search_input:focus {
@@ -46,8 +53,8 @@
     padding: 4px;
     background-color: $ml-color-gray-3;
     border: 0;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-top-right-radius: $sb-border-radius;
+    border-bottom-right-radius: $sb-border-radius;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
     cursor: pointer;
@@ -62,5 +69,26 @@
 
   &__search_icon {
     height: 60%;
+  }
+}
+
+@media (max-width: 1200px) { 
+  .SearchBox {
+
+    &__wrapper {
+      width: $sb-width-md;
+    }
+  }
+}
+
+@media (max-width: 920px) { 
+  .SearchBox {
+
+    height: 60px;
+
+    &__wrapper {
+      width: $sb-width-sm;
+      height: 45px;
+    }
   }
 }

@@ -1,8 +1,9 @@
 // Colors
-$ml-color-yellow: #FFE600;
+$ml-color-yellow: #ffe600;
 $ml-color-gray-1: #333333;
 $ml-color-gray-2: #999999;
-$ml-color-gray-3: #EEEEEE;
+$ml-color-gray-3: #eeeeee;
+$ml-color-blue: #3486fA;
 
 // Text variables
 $ml-color-text-primary: $ml-color-gray-1;
@@ -11,12 +12,21 @@ $ml-color-text-secondary: $ml-color-gray-2;
 // backgrounds
 $ml-container-bg-color: $ml-color-gray-3;
 
+// Widths
+$ml-width-xl: 70%;
+$ml-width-md: 85%;
+$ml-width-sm: 95%;
+
+// Rounded elements
+$ml-border-radius: 4px;
+
+
 
 
 //font-sizes;
 $ml-font-size-46: 46px;
 $ml-font-size-28: 28px;
 $ml-font-size-24: 24px;
-$ml-font-size-18: 16px;
+$ml-font-size-18: 18px;
 $ml-font-size-14: 14px;
 $ml-font-size-12: 12px;
