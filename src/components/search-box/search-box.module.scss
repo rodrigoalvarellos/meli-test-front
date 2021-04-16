@@ -7,6 +7,7 @@
   align-items: center;
   width: 100vw;
   height: 50px;
+  padding: 5px;
 
   &__wrapper {
     display: flex;
@@ -30,7 +31,7 @@
     border-bottom-right-radius: 0px;
     color: $ml-color-gray-1;
     font-family: inherit;
-    font-size: 18px;
+    font-size: $ml-font-size-18;
     padding: 4px 15px;
     height: 100%;
     width: 100%;
@@ -38,6 +39,7 @@
 
   &__search_input:focus {
     outline: none;
+    // outline-color: $ml-color-gray-2;
   }
 
   &__search_button {
@@ -55,6 +57,7 @@
 
   &__search_button {
     outline: none;
+    // outline-color: $ml-color-gray-2;
   }
 
   &__search_icon {

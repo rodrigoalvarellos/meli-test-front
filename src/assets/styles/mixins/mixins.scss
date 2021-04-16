@@ -1,0 +1,4 @@
+@mixin text-format( $size, $color: inherit) {
+    font-size:  $size;
+    color: $color;
+}

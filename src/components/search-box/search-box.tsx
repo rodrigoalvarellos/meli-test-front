@@ -2,34 +2,32 @@ import styles from "./search-box.module.scss"; // Import css modules stylesheet 
 
 // Assets
 import logo from "../../assets/images/Logo_ML@2x.png.png";
-import lupa from "../../assets/images/ic_Search@2x.png";
+import { SearchIcon } from "../icons/search-icon";
+import { FC, HTMLAttributes } from "react";
 
-export interface ISearchBoxProps {}
+export interface ISearchBoxProps extends HTMLAttributes<HTMLElement>  {}
 
-export function SearchBox(props: ISearchBoxProps) {
+export const SearchBox:FC<ISearchBoxProps> = (props) => {
   return (
-    <nav className={styles.SearchBox}>
-
+    <header className={styles.SearchBox} {...props}>
       <div className={styles.SearchBox__wrapper}>
-
-        <img  className={styles.SearchBox__meli_logo} src={logo} alt="Mercado Libre" />
+        <img
+          className={styles.SearchBox__meli_logo}
+          src={logo}
+          alt="Mercado Libre"
+        />
 
         <input
           className={styles.SearchBox__search_input}
           type="text"
           placeholder="Nunca dejes de buscar"
+          aria-label="Ingresá lo que quieras encontrar"
         />
 
-        <button className={styles.SearchBox__search_button}>
-
-          <img
-            className={styles.SearchBox__search_icon}
-            src={lupa}
-            alt="Buscar"
-          />
-
+        <button className={styles.SearchBox__search_button} aria-label="Buscar">
+          <SearchIcon  aria-hidden="true"/>
         </button>
       </div>
-    </nav>
+    </header>
   );
 }

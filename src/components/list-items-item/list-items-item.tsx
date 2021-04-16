@@ -1,14 +1,14 @@
-import React, { ReactElement } from 'react';
 import styles from './list-items-item.module.scss';
 
 // Assets
 import shipping from '../../assets/images/ic_shipping@2x.png'
+import { FC, HTMLAttributes } from 'react';
 
-export interface IListItemsItemProps {}
+export interface IListItemsItemProps extends HTMLAttributes<HTMLDivElement> {}
 
-export default function ListItemsItem(props: IListItemsItemProps): ReactElement {
+export const ListItemsItem: FC<IListItemsItemProps> = (props) => {
     return (
-        <div className={styles.ListItemsItem}>
+        <div className={styles.ListItemsItem} {...props}>
             
           <div className={styles.ListItemsItem__image}></div>
 

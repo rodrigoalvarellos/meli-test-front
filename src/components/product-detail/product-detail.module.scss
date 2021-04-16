@@ -1,0 +1,57 @@
+
+@import '../../assets/styles/mixins/mixins.scss';
+@import '../../assets/styles/variables.scss';
+
+$pd-description-title-fs: 28px;
+$pd-description-text-fs: 16px;
+
+.ProductDetail {
+    width: 70%;
+    border-radius: 4px;  
+    min-height: 70vh;
+    background-color: #FFF;
+    padding: 10px;
+
+    &__content_row {
+        display: flex;
+    }
+
+    &__image {
+        border: 1px solid red;
+        width: 680px;
+        height: 500px; // Sacar esto
+    }
+
+    &__detail_content {
+        border: 1px solid steelblue;        
+        flex-grow: 1;
+        // height: 700px;
+    }
+
+    &_detail_wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    &__description_wrapper {
+        width: 100%;
+        height: 100px;
+        border: 1px solid green;
+    }
+
+    &__description_title {
+        @include text-format($pd-description-title-fs, $ml-color-text-primary);
+       
+    }
+
+    &__description_text {
+        @include text-format($pd-description-text-fs, $ml-color-text-secondary);
+        text-align: justify;
+        width: 70%;       
+    }
+
+
+
+}
