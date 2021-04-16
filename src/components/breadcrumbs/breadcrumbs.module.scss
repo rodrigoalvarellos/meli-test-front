@@ -1,13 +1,54 @@
-@import '../../assets/styles/variables.scss';
+@import "../../assets/styles/variables.scss";
+
+$bc-width-xl: $ml-width-xl;
+$bc-width-md: $ml-width-md;
+$bc-width-sm: $ml-width-sm;
 
 .Breadcrumbs {
-    width: 70%;
-    // padding: 10px 0;
-    margin: 16px 0;
+  width: $bc-width-xl;
+  margin: 16px 0;
 
-    &__link {
-        color: $ml-color-gray-2;
-        margin-right: 10px;
-    }
+  &__list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
 
+  &__list_item {
+    display: inline;
+  }
+
+  &__list_item + &__list_item :before {
+    padding: 8px;
+    color: $ml-color-text-secondary;
+    content: ">";
+  }
+
+  &__link {
+    color: $ml-color-text-secondary;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  &__link:hover {
+    color: darken($ml-color-text-secondary, 30%);
+  }
+
+  &__link:active,
+  &__link:focus {
+    color: $ml-color-blue;
+  }
+  
+}
+
+@media (max-width: 1200px) {
+  .Breadcrumbs {
+    width: $bc-width-md;
+  }
+}
+
+@media (max-width: 920px) {
+  .Breadcrumbs {
+    width: $bc-width-sm;
+  }
 }
