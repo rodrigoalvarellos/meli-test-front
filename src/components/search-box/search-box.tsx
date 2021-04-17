@@ -4,18 +4,23 @@ import styles from "./search-box.module.scss"; // Import css modules stylesheet 
 import logo from "../../assets/images/Logo_ML@2x.png.png";
 import { SearchIcon } from "../icons/search-icon";
 import { FC, HTMLAttributes } from "react";
+import { Link } from "@reach/router";
 
-export interface ISearchBoxProps extends HTMLAttributes<HTMLElement>  {}
+export interface ISearchBoxProps extends HTMLAttributes<HTMLElement> {}
 
-export const SearchBox:FC<ISearchBoxProps> = (props) => {
+export const SearchBox: FC<ISearchBoxProps> = (props) => {
+
+
   return (
     <header className={styles.SearchBox} {...props}>
       <div className={styles.SearchBox__wrapper}>
-        <img
-          className={styles.SearchBox__meli_logo}
-          src={logo}
-          alt="Mercado Libre"
-        />
+        <Link to="/" className={styles.SearchBox__image_link}>
+          <img
+            className={styles.SearchBox__meli_logo}
+            src={logo}
+            alt="Mercado Libre"
+          />
+        </Link>
 
         <input
           className={styles.SearchBox__search_input}
@@ -24,10 +29,10 @@ export const SearchBox:FC<ISearchBoxProps> = (props) => {
           aria-label="Ingresá lo que quieras encontrar"
         />
 
-        <button className={styles.SearchBox__search_button} aria-label="Buscar">
-          <SearchIcon  aria-hidden="true"/>
+        <button className={styles.SearchBox__search_button} aria-label="Buscar" >
+          <SearchIcon aria-hidden="true" />
         </button>
       </div>
     </header>
   );
-}
+};

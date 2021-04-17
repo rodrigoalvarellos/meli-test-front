@@ -26,6 +26,10 @@ $sb-border-radius: $ml-border-radius;
     height: 35px;   
   }
 
+  &__image_link {
+    height: 100%;
+  }
+
   &__meli_logo { 
     margin-right: 25px;
     height: 100%;        

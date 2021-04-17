@@ -25,12 +25,7 @@ export const Breadcrumbs: FC<IBreadcrumbsProps> = (props) => {
           <a href="/" className={styles.Breadcrumbs__link}>R29</a>
         </li>
       </ul>
-
-      {/* <span className={styles.Breadcrumbs__link}>Electrónica, Audio y Video &gt;</span>
-        <span className={styles.Breadcrumbs__link}>iPod &gt;</span>
-        <span className={styles.Breadcrumbs__link}>Reproductores &gt;</span>
-        <span className={styles.Breadcrumbs__link}>iPod touch &gt;</span>
-        <span className={styles.Breadcrumbs__link}>32 GB</span> */}
+      
     </nav>
   );
 };

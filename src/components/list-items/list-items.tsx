@@ -1,8 +1,9 @@
+import { RouteComponentProps } from "@reach/router";
 import { FC, HTMLAttributes } from "react";
 import { ListItemsItem } from '../list-items-item/list-items-item';
 import styles from "./list-items.module.scss"; // Import css modules stylesheet as styles
 
-export interface IListItemsProps extends HTMLAttributes<HTMLDivElement> {}
+export interface IListItemsProps extends HTMLAttributes<HTMLDivElement>, RouteComponentProps {}
 
 export const ListItems: FC<IListItemsProps> = (props) => {
   return (

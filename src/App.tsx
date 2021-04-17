@@ -1,17 +1,23 @@
 import "./App.scss";
-import { Breadcrumbs } from "./components/breadcrumbs/breadcrumbs";
-// import { ListItems } from "./components/list-items/list-items";
 import { SearchBox } from "./components/search-box/search-box";
-import { ProductDetail } from "./components/product-detail/product-detail";
+
+import { Router } from "@reach/router";
+import { HomePage } from "./pages/home-page/home-page";
+import { ResultsPage } from './pages/results-page/results-page';
+import { ProductPage } from './pages/product-page/product-page';
 
 function App() {
   return (
     <div className="App">
-      <SearchBox />
 
-      <Breadcrumbs />
-      {/* <ListItems /> */}
-      <ProductDetail />
+      <SearchBox/>
+
+      <Router className="App__router">
+        <HomePage path="/"/>
+        <ResultsPage path="/results"/>
+        <ProductPage  path="/item/:itemId" />
+      </Router>
+
     </div>
   );
 }
