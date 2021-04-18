@@ -42,6 +42,7 @@ $pd-description-text-fs: 16px;
       border-radius: 4px;
       width: 100%;
       max-width: 680px;
+      max-height: 680px;
 
   }
 
@@ -70,6 +71,12 @@ $pd-description-text-fs: 16px;
     @include text-format($pd-detail-price-fs, $ml-color-text-primary, 500);
     padding: $pd-detail-padding 0px;
     font-weight: 500;
+    // position: relative;
+  }
+
+  &__detail_price_decimals {    
+    font-size: 1.5rem;
+    vertical-align: 16px;    
   }
 
 

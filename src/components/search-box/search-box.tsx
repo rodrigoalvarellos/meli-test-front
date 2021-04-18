@@ -12,7 +12,6 @@ export const SearchBox: FC<ISearchBoxProps> = (props) => {
   const [value, setValue] = useState<string>("");
 
   const onSearch = (event: React.FormEvent<HTMLFormElement>): void => {
-    console.log(value);
     event.preventDefault();
     navigate(`/items?search=${value}`);
   };

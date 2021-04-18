@@ -4,9 +4,9 @@ import { ListItems } from "../../components/list-items/list-items";
 import { Breadcrumbs } from "../../components/breadcrumbs/breadcrumbs";
 import { FC } from "react";
 import { parse } from "query-string";
-import { searchService } from "../../services/search.services";
+import { searchItems, SearchQueriesParameters } from "../../services/items.service";
 import { Loading } from '../../components/loading/loading';
-import { SearchResult } from "../../interfaces/searchResult";
+import { SearchResult } from "../../interfaces/searchResult.interface";
 
 interface IResultsPageProps extends RouteComponentProps {}
 
@@ -15,21 +15,22 @@ export const ResultsPage: FC<IResultsPageProps> = (props) => {
 
   const [loading, setLoading] = useState<boolean>(false);
   const [results, setResults] = useState<SearchResult>();
-  const query: any = parse(location.search);
+  const query:SearchQueriesParameters = parse(location.search);
 
   useEffect(() => {
-    console.log(query.search);
     fetchSearchResult();
-  }, []);
+  }, [query.search, query.category]);
 
   const fetchSearchResult = async () => {
     setLoading(true);
     try {
-      const response = await searchService(query.search);
+      const response = await searchItems(query);
       if (response) {
         setResults(response);
       }
-    } catch (error) {}
+    } catch (error) {
+      // TODO
+    }
     setLoading(false);
   };
 
@@ -40,7 +41,7 @@ export const ResultsPage: FC<IResultsPageProps> = (props) => {
 
   return (
     <React.Fragment>
-      <Breadcrumbs />
+      <Breadcrumbs categories={results?.categories || []}/>
       <ListItems items={results?.items} />
     </React.Fragment>
   );

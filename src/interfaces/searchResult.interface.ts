@@ -1,9 +1,11 @@
+import { Category } from "./category.interface";
+
 export interface SearchResult {
   author: {
     name: string;
     lastname: string;
   };
-  categories: string[];
+  categories: Category[];
   items: Item[];  
 }
 
