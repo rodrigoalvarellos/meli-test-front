@@ -35,6 +35,12 @@ $sb-border-radius: $ml-border-radius;
     height: 100%;        
   }
 
+  &__form {
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+
   &__search_input {
     border: 0;
     border-top-left-radius: $sb-border-radius;

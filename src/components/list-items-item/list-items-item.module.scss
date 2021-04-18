@@ -5,14 +5,16 @@
   //   height: 212px;
   display: flex;
 
-  &__image {
-    background-color: red;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
+  &__image_wrapper {   
     margin: 16px;
     height: 180px;
     width: 180px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    border-radius: $ml-border-radius;
   }
 
   &__content_wrapper {

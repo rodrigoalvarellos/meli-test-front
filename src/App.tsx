@@ -14,7 +14,7 @@ function App() {
 
       <Router className="App__router">
         <HomePage path="/"/>
-        <ResultsPage path="/results"/>
+        <ResultsPage path="/items"/>
         <ProductPage  path="/item/:itemId" />
       </Router>
 
