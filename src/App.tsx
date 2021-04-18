@@ -6,9 +6,11 @@ import { HomePage } from "./pages/home-page/home-page";
 import { ResultsPage } from './pages/results-page/results-page';
 import { ProductPage } from './pages/product-page/product-page';
 
+export const DATA_TESTID = 'APP_TESTID';
+
 function App() {
   return (
-    <div className="App">
+    <div className="App" data-testid={DATA_TESTID}>
 
       <SearchBox/>
 

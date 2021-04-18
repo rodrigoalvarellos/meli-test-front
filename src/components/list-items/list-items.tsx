@@ -10,12 +10,14 @@ export interface IListItemsProps
   items?: Item[];
 }
 
-export const ListItems: FC<IListItemsProps> = ({items, ...props}) => {
+export const ListItems: FC<IListItemsProps> = ({ items, ...props }) => {
   return (
     <div className={styles.ListItems} {...props}>
       <ul className={styles.ListItems__list}>
         {items?.map((item) => (
-          <ListItemsItem key={item.id} item={item}/>
+          <li key={item.id}>
+            <ListItemsItem item={item} />
+          </li>
         ))}
       </ul>
     </div>

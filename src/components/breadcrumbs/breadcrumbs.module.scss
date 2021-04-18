@@ -16,14 +16,15 @@ $bc-width-sm: $ml-width-sm;
   }
 
   &__list_item {
-    display: inline;
+    display: inline-flex;
+    align-items: center;    
   }
 
-  &__list_item + &__list_item :before {
-    padding: 8px;
-    color: $ml-color-text-secondary;
-    content: ">";
-  }
+  // &__list_item + &__list_item :before {
+  //   padding: 8px;
+  //   color: $ml-color-text-secondary;
+  //   content: ">";
+  // }
 
   &__link {
     color: $ml-color-text-secondary;

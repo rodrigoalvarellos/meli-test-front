@@ -1,6 +1,6 @@
-import { FC, HTMLAttributes } from "react";
+import { FC } from "react";
 
-interface ISearchIcon extends HTMLAttributes<SVGElement> {}
+interface ISearchIcon extends React.SVGProps<SVGSVGElement> {}
 
 export const SearchIcon:FC<ISearchIcon> = (props) => {
   return (

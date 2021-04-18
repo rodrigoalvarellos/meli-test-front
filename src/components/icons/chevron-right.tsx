@@ -1,6 +1,6 @@
-import { FC, HTMLAttributes } from "react";
+import { FC } from "react";
 
-interface IChevronIcon extends HTMLAttributes<SVGElement> {}
+interface IChevronIcon extends React.SVGProps<SVGSVGElement> {}
 
 export const ChevronIcon: FC<IChevronIcon> = (props) => {
   return (
