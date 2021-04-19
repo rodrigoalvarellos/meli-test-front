@@ -6,6 +6,8 @@ import { SearchIcon } from "../icons/search-icon";
 import { FC, HTMLAttributes, useState } from "react";
 import { Link, navigate } from "@reach/router";
 
+const DATA_TESTID = 'seachbox_testid';
+
 export interface ISearchBoxProps extends HTMLAttributes<HTMLElement> {}
 
 export const SearchBox: FC<ISearchBoxProps> = (props) => {
@@ -17,7 +19,7 @@ export const SearchBox: FC<ISearchBoxProps> = (props) => {
   };
 
   return (
-    <header className={styles.SearchBox} {...props}>
+    <header className={styles.SearchBox} {...props} data-testid={DATA_TESTID}>
       <div className={styles.SearchBox__wrapper}>
         <Link to="/" className={styles.SearchBox__image_link}>
           <img
