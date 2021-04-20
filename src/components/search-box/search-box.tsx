@@ -18,10 +18,14 @@ export const SearchBox: FC<ISearchBoxProps> = (props) => {
     navigate(`/items?search=${value}`);
   };
 
+  const clearSearchValue = (): void => {
+    setValue('');
+  }
+
   return (
     <header className={styles.SearchBox} {...props} data-testid={DATA_TESTID}>
       <div className={styles.SearchBox__wrapper}>
-        <Link to="/" className={styles.SearchBox__image_link}>
+        <Link to="/" className={styles.SearchBox__image_link} onClick={clearSearchValue}>
           <img
             className={styles.SearchBox__meli_logo}
             src={logo}

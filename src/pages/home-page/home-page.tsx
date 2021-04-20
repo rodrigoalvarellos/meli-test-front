@@ -8,10 +8,10 @@ interface IHomeProps extends RouteComponentProps {}
 export const HomePage: FC<IHomeProps> = (props) => {
   return (
     <React.Fragment>
-        <div className={styles.HomePage__card_container}>
+        {/* <div className={styles.HomePage__card_container}>
              <Card >Hola</Card>
 
-        </div>
+        </div> */}
     </React.Fragment>
   );
 };

@@ -27,7 +27,7 @@ export const Breadcrumbs: FC<IBreadcrumbsProps> = ({
               {cat.name}
             </Link>
             {idx < categories.length - 1 ? (
-              <ChevronIcon fill="#999999" />
+              <ChevronIcon fill="#999999" height="16px"/>
             ) : null}
           </li>
         ))}

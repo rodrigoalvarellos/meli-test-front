@@ -1,27 +1,39 @@
 @import "../../assets/styles/variables.scss";
 
-.ListItemsItem {
-  border: 1px solid red;
-  //   height: 212px;
-  display: flex;
+$li-title-fs: 18px;
+$li-price-fs: 24px;
 
-  &__image_wrapper {   
-    margin: 16px;
+.ListItemsItem {
+  // border: 1px solid red;
+  display: flex;
+  border-bottom: 1px solid $ml-color-gray-3;
+  margin: 16px 16px 0 16px;
+  padding-bottom: 16px;
+
+  &__image_wrapper {
+    // border: 1px solid red;
     height: 180px;
     width: 180px;
+    margin-right: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 180px;
   }
 
   &__image {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+
+
+
     border-radius: $ml-border-radius;
   }
 
   &__content_wrapper {
-    border: 1px solid blue;
-    flex-grow: 1;
-    margin: 16px 16px 16px 0;
-    // height: 100%;
+    // border: 1px solid blue;
+    width: 100%;
   }
 
   &__price_wrapper {
@@ -29,28 +41,59 @@
   }
 
   &__price {
-    font-size: $ml-font-size-24;
-    margin-right: 20px;
+    font-size: $li-price-fs;
+    margin-right: 16px;
     font-weight: 500;
   }
 
+  &__price_decimals {
+    padding-left: 2px;
+    font-size: 1rem;
+    vertical-align: 6px;  
+  }
+
   &__shipping {
-    // height: 100%;
-    // display: inline-block;
+    height: 24px;
   }
 
   &__location_wrapper {
-      display: flex;
-      justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
   }
 
-  &__location{
-   color: $ml-color-gray-2;
-   font-size: $ml-font-size-12;
+  &__location {
+    width: 25%;
+    color: $ml-color-gray-2;
+    font-size: $ml-font-size-12;
   }
 
   &__title {
-    font-size: $ml-font-size-18;
+    font-size: $li-title-fs;
+    font-weight: 500;
     width: 70%;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 1.3;
+    // max-height: 40px;
+    overflow: hidden;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+}
+
+@media (max-width: 1200px) {
+  .ListItemsItem {
+    &__location {
+      width: 30%;
+    }
+  }
+}
+
+@media (max-width: 920px) {
+  .ListItemsItem {
+    &__location {
+      padding: 4px 0;
+      width: 100%;
+    }
   }
 }

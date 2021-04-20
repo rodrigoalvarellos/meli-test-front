@@ -29,7 +29,8 @@ export const ListItemsItem: FC<IListItemsItemProps> = ({ item, ...props }) => {
       <div className={styles.ListItemsItem__content_wrapper}>
         <span className={styles.ListItemsItem__price_wrapper}>
           <span className={styles.ListItemsItem__price}>
-            {item.price.currency} {item.price.amount}.{item.price.decimals}
+            {/* {item.price.currency} */}
+             $ {item.price.amount}<small className={styles.ListItemsItem__price_decimals}>{item.price.decimals}</small>
           </span>
           {item.free_shipping ? (
             <img
@@ -44,9 +45,9 @@ export const ListItemsItem: FC<IListItemsItemProps> = ({ item, ...props }) => {
           <span className={styles.ListItemsItem__location}>{item.address.state}</span>
         </div>
 
-        <p className={styles.ListItemsItem__title}>
+        <h2 className={styles.ListItemsItem__title}>
           {item.title}
-        </p>
+        </h2>
       </div>
     </div>
   );
