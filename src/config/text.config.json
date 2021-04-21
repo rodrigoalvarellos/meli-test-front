@@ -1,0 +1,15 @@
+{
+    "product-detail": {
+        "sold": "vendido",
+        "solds": "vendidos",
+        "shipping-alt": "Enviado por Mercado Libre",
+        "buy-btn": "Comprar",
+        "product-description-title": " Descripción del producto"
+    },
+    "item-conditions": {
+        "new": "Nuevo",
+        "used": "Nsado",
+        "not_specified": "No especifica"
+    }
+
+}
