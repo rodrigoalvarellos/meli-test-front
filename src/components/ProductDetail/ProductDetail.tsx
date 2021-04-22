@@ -1,6 +1,6 @@
-import styles from "./product-detail.module.scss";
+import styles from "./ProductDetail.module.scss";
 import { FC, HTMLAttributes } from "react";
-import { Button } from "../button/button";
+import { Button } from "../Button/Button";
 import texts from "../../config/text.config.json";
 
 import { ProductDetailItem } from "../../interfaces/product-detail.iterface";

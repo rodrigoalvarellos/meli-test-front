@@ -4,7 +4,7 @@ $li-width-xl: $ml-width-xl;
 $li-width-md: $ml-width-md;
 $li-width-sm: $ml-width-sm;
 
-.ListItems {
+.SearchResults {
   width: $li-width-xl;
   border-radius: $ml-border-radius;
   background-color: #fff;
@@ -22,13 +22,13 @@ $li-width-sm: $ml-width-sm;
 }
 
 @media (max-width: 1200px) {
-  .ListItems {
+  .SearchResults {
     width: $li-width-md;
   }
 }
 
 @media (max-width: 920px) {
-  .ListItems {
+  .SearchResults {
     width: $li-width-sm;
   }
 }

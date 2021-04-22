@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { HTMLAttributes } from "react";
-import styles from "./card.module.scss";
+import styles from "./Card.module.scss";
 
 interface ICardProps extends HTMLAttributes<HTMLDivElement> {}
 

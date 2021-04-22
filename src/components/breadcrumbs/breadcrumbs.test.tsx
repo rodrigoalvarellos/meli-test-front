@@ -1,7 +1,7 @@
 
 
 import { getByTestId, render  } from '@testing-library/react';
-import { Breadcrumbs, DATA_TESTID } from './breadcrumbs';
+import { Breadcrumbs, DATA_TESTID } from './Breadcrumbs';
 import { Category } from '../../interfaces/category.interface';
 
 const categories: Category[] = [  {

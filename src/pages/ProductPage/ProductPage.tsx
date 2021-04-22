@@ -1,10 +1,10 @@
 import { navigate, RouteComponentProps } from "@reach/router";
 import React, { FC, useEffect, useState } from "react";
-import { Breadcrumbs } from "../../components/breadcrumbs/breadcrumbs";
-import { Loading } from "../../components/loading/loading";
-import { ProductDetail } from "../../components/product-detail/product-detail";
+import { Loading } from "../../components/Loading/Loading";
+import { ProductDetail } from "../../components/ProductDetail/ProductDetail";
 import { getProductoDetail } from "../../services/items.service";
 import { ProductDetailItem } from '../../interfaces/product-detail.iterface';
+import { Breadcrumbs } from "../../components/Breadcrumbs/Breadcrumbs";
 
 interface IProductPageProps extends RouteComponentProps {
   itemId?: string;

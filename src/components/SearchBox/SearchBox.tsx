@@ -1,16 +1,21 @@
-import styles from "./search-box.module.scss"; // Import css modules stylesheet as styles
+import styles from "./SearchBox.module.scss"; // Import css modules stylesheet as styles
 
 // Assets
 import logo from "../../assets/images/Logo_ML@2x.png.png";
-import { SearchIcon } from "../icons/search-icon";
+import { SearchIcon } from "../icons/SearchIcon";
 import { FC, HTMLAttributes, useState } from "react";
 import { Link, navigate } from "@reach/router";
+
+import texts from '../../config/text.config.json';
 
 const DATA_TESTID = 'seachbox_testid';
 
 export interface ISearchBoxProps extends HTMLAttributes<HTMLElement> {}
 
 export const SearchBox: FC<ISearchBoxProps> = (props) => {
+
+  const sbTexts = texts["search-box"];
+
   const [value, setValue] = useState<string>("");
 
   const onSearch = (event: React.FormEvent<HTMLFormElement>): void => {
@@ -29,7 +34,7 @@ export const SearchBox: FC<ISearchBoxProps> = (props) => {
           <img
             className={styles.SearchBox__meli_logo}
             src={logo}
-            alt="Mercado Libre"
+            alt={sbTexts["meli-logo-alt"]}
           />
         </Link>
 
@@ -37,8 +42,8 @@ export const SearchBox: FC<ISearchBoxProps> = (props) => {
           <input
             className={styles.SearchBox__search_input}
             type="text"
-            placeholder="Nunca dejes de buscar"
-            aria-label="Ingresá lo que quieras encontrar"
+            placeholder={sbTexts["input-placeholder"]}
+            aria-label={sbTexts["input-aria-label"]}
             value={value}
             onChange={(event: React.FormEvent<HTMLInputElement>) =>
               setValue(event.currentTarget.value)
@@ -48,7 +53,7 @@ export const SearchBox: FC<ISearchBoxProps> = (props) => {
           <button
             type="submit"
             className={styles.SearchBox__search_button}
-            aria-label="Buscar"            
+            aria-label={sbTexts["search-btn"]}           
           >
             <SearchIcon aria-hidden="true" />
           </button>

@@ -1,5 +1,5 @@
 import { FC, HtmlHTMLAttributes } from "react";
-import styles from "./button.module.scss";
+import styles from "./Button.module.scss";
 
 interface IButtonProps extends HtmlHTMLAttributes<HTMLButtonElement> {
  

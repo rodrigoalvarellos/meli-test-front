@@ -1,7 +1,7 @@
 import { FC, HTMLAttributes } from "react";
 import { Category } from "../../interfaces/category.interface";
-import styles from "./breadcrumbs.module.scss";
-import { ChevronIcon } from "../icons/chevron-right";
+import styles from "./Breadcrumbs.module.scss";
+import { ChevronIcon } from "../icons/ChevronRight";
 import { Link } from "@reach/router";
 
 export const DATA_TESTID = 'BREADCRUMB_TESTID';
@@ -23,6 +23,7 @@ export const Breadcrumbs: FC<IBreadcrumbsProps> = ({
             <Link
               to={`/items?category=${cat.id}`}
               className={styles.Breadcrumbs__link}
+              aria-label={cat.name}
             >
               {cat.name}
             </Link>

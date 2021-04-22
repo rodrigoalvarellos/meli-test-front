@@ -1,10 +1,10 @@
 import "./App.scss";
-import { SearchBox } from "./components/search-box/search-box";
+import { SearchBox } from "./components/SearchBox/SearchBox";
 
 import { Router } from "@reach/router";
-import { HomePage } from "./pages/home-page/home-page";
-import { ResultsPage } from './pages/results-page/results-page';
-import { ProductPage } from './pages/product-page/product-page';
+import { HomePage } from "./pages/HomePage/HomePage";
+import { ResultsPage } from './pages/ResultsPage/ResultsPage';
+import { ProductPage } from './pages/ProductPage/ProductPage';
 
 export const DATA_TESTID = 'APP_TESTID';
 

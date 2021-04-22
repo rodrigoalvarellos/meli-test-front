@@ -1,7 +1,6 @@
 import React, { FC } from "react";
-// import styles from "./home-page.module.scss";
+// import styles from './HomePage.module.scss';
 import { RouteComponentProps } from "@reach/router";
-// import { Card } from "../../components/card/card";
 
 interface IHomeProps extends RouteComponentProps {}
 
