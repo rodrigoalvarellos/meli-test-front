@@ -6,6 +6,11 @@ enum Conditions {
   NotSpecified = "not_specified",
 }
 
+/**
+ * Set product condition
+ * @param {condition} condition  - input values 'new', 'used', 'not_specified'
+ * @return {string} translated string 
+ */
 export const setStatusText = (condition: string): string => {
   const conditionTexts = texts["item-conditions"];
 

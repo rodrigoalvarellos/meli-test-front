@@ -1,170 +1,43 @@
-import { render, screen } from '@testing-library/react';
-import { SearchResult } from '../interfaces/searchResult.interface';
-import { getProductoDetail, searchItems } from './items.service';
+import { render, screen } from "@testing-library/react";
+import { SearchResult } from "../interfaces/searchResult.interface";
+import { PRODUCT_DETAIL_MOCK } from "../mocks/productDetail.mock";
+import { SEARCH_RESULTS_MOCK } from "../mocks/searchResults.mock";
+import { getProductoDetail, searchItems } from "./items.service";
 
-const searchMockedResult = {
-  author: {
-    name: 'Rodrigo',
-    lastname: 'Alvarellos',
-  },
-  categories: [
-    {
-      id: 'MLA1276',
-      name: 'Deportes y Fitness',
-    },
-    {
-      id: 'MLA1338',
-      name: 'Fitness y Musculación',
-    },
-    {
-      id: 'MLA438160',
-      name: 'Máquinas Cardiovasculares',
-    },
-    {
-      id: 'MLA3095',
-      name: 'Bicicletas Fijas',
-    },
-  ],
-  items: [
-    {
-      id: '1',
-      title: 'Bicicleta roja',
-      price: {
-        currency: '$',
-        amount: '12000',
-        decimals: '00',
-      },
-      picture: 'http://http2.mlstatic.com/D_908600-MLA32582065628_102019-I.jpg',
-      condition: 'Nuevo',
-      free_shipping: true,
-      address: {
-        state: 'Córdoba',
-      },
-    },
-    {
-      id: '2',
-      title: 'Bicicleta verde',
-      price: {
-        currency: '$',
-        amount: '12000',
-        decimals: '00',
-      },
-      picture: 'http://http2.mlstatic.com/D_908600-MLA32582065628_102019-I.jpg',
-      condition: 'Nuevo',
-      free_shipping: false,
-      address: {
-        state: 'Capital Federal',
-      },
-    },
-    {
-      id: '3',
-      title: 'Bicicleta azul',
-      price: {
-        currency: '$',
-        amount: '12000',
-        decimals: '00',
-      },
-      picture: 'http://http2.mlstatic.com/D_908600-MLA32582065628_102019-I.jpg',
-      condition: 'Nuevo',
-      free_shipping: true,
-      address: {
-        state: 'Mendoza',
-      },
-    },
-    {
-      id: '4',
-      title: 'Bicicleta amarilla',
-      price: {
-        currency: '$',
-        amount: '12000',
-        decimals: '00',
-      },
-      picture: 'http://http2.mlstatic.com/D_908600-MLA32582065628_102019-I.jpg',
-      condition: 'Nuevo',
-      free_shipping: false,
-      address: {
-        state: 'Santa Fe',
-      },
-    },
-  ],
-};
+const searchMockedResult = SEARCH_RESULTS_MOCK;
+const productDetailResultMock = PRODUCT_DETAIL_MOCK;
 
-const productDetailResultMock = {
-  author: {
-    name: 'Rodrigo',
-    lastname: 'Alvarellos',
-  },
-  categories: [
-    {
-      id: 'MLA1276',
-      name: 'Deportes y Fitness',
-    },
-    {
-      id: 'MLA1338',
-      name: 'Fitness y Musculación',
-    },
-    {
-      id: 'MLA438160',
-      name: 'Máquinas Cardiovasculares',
-    },
-    {
-      id: 'MLA3095',
-      name: 'Bicicletas Fijas',
-    },
-  ],
-  item: {
-    id: '1',
-    title: 'Bicicleta fija para ver series mientras pedaleas',
-    price: {
-      currency: '$',
-      amount: '12000',
-      decimals: '00',
-    },
-    picture: 'https://http2.mlstatic.com/D_908600-MLA32582065628_102019-O.jpg',
-    condition: 'Nuevo',
-    free_shipping: true,
-    sold_quantity: 34,
-    description:
-      'dadasda da asd adadadasdasda sadasdadasdasd asdasdadadasdad asdadadad asdasdad sdasdasad asdadasdasda addadadasd asdasdasda dasdasdasd asdaadasW',
-  },
-};
-
-function setupFetchStub(data :any) {
+function setupFetchStub(data: any) {
   return function fetchStub(_url: any) {
     return new Promise((resolve) => {
       resolve({
-        json: () =>
-          Promise.resolve(
-            data,
-          ),
-      })
-    })
-  }
+        json: () => Promise.resolve(data),
+      });
+    });
+  };
 }
 
-describe('ItemService test suit', () => {
+describe("ItemService test suit", () => {
+  test("searchItems shoud have results", async () => {
+    global.fetch = jest
+      .fn()
+      .mockImplementation(setupFetchStub(searchMockedResult));
 
-  test('searchItems shoud have results', async () => {
-
-    global.fetch = jest.fn().mockImplementation(setupFetchStub(searchMockedResult));
-  
-    const res = await searchItems({search: ''});
-    expect(res.author).not.toBeNull();
-    expect(res.author.name).toBe('Rodrigo');
-   
+    const res = await searchItems({ search: "iPhone" });
+    
+    expect(res.items[0]).not.toBeNull();
+    expect(res.items[0].author.name).toBe(
+      SEARCH_RESULTS_MOCK.items[0].author.name
+    );
   });
 
-  test('getProductoDetail shoud have results', async () => {
+  test("getProductoDetail shoud have results", async () => {
+    global.fetch = jest
+      .fn()
+      .mockImplementation(setupFetchStub(productDetailResultMock));
 
-    global.fetch = jest.fn().mockImplementation(setupFetchStub(productDetailResultMock));
-  
-    const res = await getProductoDetail('1');
+    const res = await getProductoDetail(PRODUCT_DETAIL_MOCK.item.id);
     expect(res.author).not.toBeNull();
-    expect(res.author.name).toBe('Rodrigo');
-   
+    expect(res.author.name).toBe(PRODUCT_DETAIL_MOCK.author.name);
   });
-
 });
-
-
-

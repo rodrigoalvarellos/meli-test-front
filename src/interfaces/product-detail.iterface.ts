@@ -5,14 +5,15 @@ export interface ProductDetailItem {
     name: string;
     lastname: string;
   };
-  categories: Category[],
+  categories: Category[];
   item: {
     id: string;
+    seller_id: string;
     title: string;
     price: {
       currency: string;
-      amount: number;
-      decimals: number;
+      amount: string;
+      decimals: string;
     };
     picture: string;
     condition: string;
@@ -22,5 +23,3 @@ export interface ProductDetailItem {
     permalink: string;
   };
 }
-
-
