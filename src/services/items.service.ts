@@ -17,7 +17,7 @@ export interface SearchQueriesParameters {
 export const searchItems = ({
   search,
   category,
-}: SearchQueriesParameters): Promise<SearchResult> => {
+}: SearchQueriesParameters): Promise<Response> => {
   let query: string = "";
 
   if (search) {
@@ -25,7 +25,7 @@ export const searchItems = ({
   } else if (category) {
     query = `?category=${category}`;
   }
-  return fetch(`${BASE_URL}/items${query}`).then((res) => res.json());
+  return fetch(`${BASE_URL}/items${query}`);
 };
 
 /**

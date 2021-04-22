@@ -1,11 +1,12 @@
 {
+    "results-page": {
+        "search-not-found" : "No se encontraron resultados para la búsqueda"
+    },
     "search-box": {
         "meli-logo-alt": "Mercado Libre",
         "input-placeholder": "Nunca dejes de buscar",
         "input-aria-label": "Ingresá lo que quieras encontrar",
         "search-btn": "Buscar"
-
-
     },
     "product-detail": {
         "sold": "vendido",
@@ -19,5 +20,7 @@
         "used": "Nsado",
         "not_specified": "No especifica"
     }
+  
+
 
 }
