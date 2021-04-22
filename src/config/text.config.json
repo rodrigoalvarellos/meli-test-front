@@ -1,0 +1,23 @@
+{
+    "search-box": {
+        "meli-logo-alt": "Mercado Libre",
+        "input-placeholder": "Nunca dejes de buscar",
+        "input-aria-label": "Ingresá lo que quieras encontrar",
+        "search-btn": "Buscar"
+
+
+    },
+    "product-detail": {
+        "sold": "vendido",
+        "solds": "vendidos",
+        "shipping-alt": "Enviado por Mercado Libre",
+        "buy-btn": "Comprar",
+        "product-description-title": " Descripción del producto"
+    },
+    "item-conditions": {
+        "new": "Nuevo",
+        "used": "Nsado",
+        "not_specified": "No especifica"
+    }
+
+}

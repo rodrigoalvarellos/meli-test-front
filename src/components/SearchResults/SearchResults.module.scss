@@ -1,0 +1,34 @@
+@import "../../assets/styles/variables.scss";
+
+$li-width-xl: $ml-width-xl;
+$li-width-md: $ml-width-md;
+$li-width-sm: $ml-width-sm;
+
+.SearchResults {
+  width: $li-width-xl;
+  border-radius: $ml-border-radius;
+  background-color: #fff;
+  margin-bottom: 32px;
+
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+//   &__list_item {
+    
+//   }
+}
+
+@media (max-width: 1200px) {
+  .SearchResults {
+    width: $li-width-md;
+  }
+}
+
+@media (max-width: 920px) {
+  .SearchResults {
+    width: $li-width-sm;
+  }
+}
