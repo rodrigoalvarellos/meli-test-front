@@ -35,7 +35,7 @@ export const ResultsPage: FC<IResultsPageProps> = (props) => {
     setLoading(true);
     try {
       const response = await searchItems(query);
-      if (response.status === 200) {
+      if (response && response.status === 200) {
         const data: SearchResult = await response.json();
         setResults(data);
       } else {

@@ -1,6 +1,4 @@
-import { SearchResult } from "../interfaces/searchResult.interface";
 import config from "../config/http.config.json";
-import { ProductDetailItem } from "../interfaces/product-detail.iterface";
 
 const BASE_URL = `${config.http}://${config.host}:${config.port}/${config.api}`;
 
@@ -33,6 +31,6 @@ export const searchItems = ({
  * @param {object} params { productId } productId
  * @returns {Promise} Promise<ProductDetailItem>
  */
-export const getProductoDetail = (id: string): Promise<ProductDetailItem> => {
-  return fetch(`${BASE_URL}/items/${id}`).then((res) => res.json());
+export const getProductoDetail = (id: string): Promise<Response> => {
+  return fetch(`${BASE_URL}/items/${id}`);
 };

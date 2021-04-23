@@ -3,7 +3,7 @@ import React, { FC, useEffect, useState } from "react";
 import { Loading } from "../../components/Loading/Loading";
 import { ProductDetail } from "../../components/ProductDetail/ProductDetail";
 import { getProductoDetail } from "../../services/items.service";
-import { ProductDetailItem } from '../../interfaces/product-detail.iterface';
+import { ProductDetailItem } from "../../interfaces/product-detail.iterface";
 import { Breadcrumbs } from "../../components/Breadcrumbs/Breadcrumbs";
 
 interface IProductPageProps extends RouteComponentProps {
@@ -22,15 +22,17 @@ export const ProductPage: FC<IProductPageProps> = ({ itemId, ...props }) => {
     setLoading(true);
     try {
       if (itemId) {
-        const response = await getProductoDetail(itemId);        
-        if (response) {
-          setProduct(response);
+        const response = await getProductoDetail(itemId);
+
+        if (response && response.status === 200) {
+          const data: ProductDetailItem = await response.json();
+          setProduct(data);
         } else {
-            navigate('/');
+          navigate("/");
         }
       }
     } catch (error) {
-      // TODO
+      navigate("/");
     }
     setLoading(false);
   };
@@ -42,12 +44,11 @@ export const ProductPage: FC<IProductPageProps> = ({ itemId, ...props }) => {
   if (product) {
     return (
       <React.Fragment>
-        <Breadcrumbs categories={product?.categories || []}/>
-        <ProductDetail product={product}/>
+        <Breadcrumbs categories={product?.categories || []} />
+        <ProductDetail product={product} />
       </React.Fragment>
     );
   } else {
     return null;
   }
-
 };
