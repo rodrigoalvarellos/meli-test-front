@@ -40,10 +40,13 @@ export const ResultsPage: FC<IResultsPageProps> = ({setMetaTags,...props}) => {
       if (response && response.status === 200) {
         const data: SearchResult = await response.json();
         setResults(data);
+
+        
+        const categoriesString = data.categories.map( cat => cat.name).join(',')
         setMetaTags({
-          title: `${texts.header_meta_tags.title} - ${(query.search ? query.search : query.category)?.toUpperCase()}`,
-          description: `${texts.header_meta_tags.title} - ${query.search ? query.search : query.category}`,
-          keywords: data.categories.map( cat => cat.name).join(','),
+          title: `${texts.header_meta_tags.title} - ${query.search ? query.search : categoriesString }`,
+          description: `${texts.header_meta_tags.title} - ${query.search ? query.search : categoriesString}`,
+          keywords: categoriesString,
         });
       } else {
         setResults(null);

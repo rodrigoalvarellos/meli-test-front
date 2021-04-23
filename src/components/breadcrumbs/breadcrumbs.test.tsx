@@ -3,23 +3,9 @@
 import { getByTestId, render  } from '@testing-library/react';
 import { Breadcrumbs, DATA_TESTID } from './Breadcrumbs';
 import { Category } from '../../interfaces/category.interface';
+import { CATEGORIES_MOCK } from '../../mocks/categories.mock';
 
-const categories: Category[] = [  {
-    id: 'MLA1276',
-    name: 'Deportes y Fitness',
-  },
-  {
-    id: 'MLA1338',
-    name: 'Fitness y Musculación',
-  },
-  {
-    id: 'MLA438160',
-    name: 'Máquinas Cardiovasculares',
-  },
-  {
-    id: 'MLA3095',
-    name: 'Bicicletas Fijas',
-  },];
+const categories: Category[] = CATEGORIES_MOCK;
 
 
 test('Breadcrumb should be rendered succesfully', () => { 
