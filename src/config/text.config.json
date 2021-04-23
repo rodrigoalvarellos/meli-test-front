@@ -1,26 +1,41 @@
 {
-    "results-page": {
-        "search-not-found" : "No se encontraron resultados para la búsqueda"
+    "header_meta_tags": {
+        "title": "Mercado Libre",
+        "slogan": "Lo mejor está llegando",
+        "description" : "La comunidad de compra y venta online más grande de América Latina.",
+        "keys": [
+            "Compra",
+            "Venta",
+            "Productos",
+            "Servicios",
+            "Cuotas",
+            "ECommerce",
+            "Envios"
+        ]
+
     },
-    "search-box": {
-        "meli-logo-alt": "Mercado Libre",
-        "input-placeholder": "Nunca dejes de buscar",
-        "input-aria-label": "Ingresá lo que quieras encontrar",
-        "search-btn": "Buscar"
+    "results_page": {
+        "search_not_found": "No se encontraron resultados para la búsqueda"
     },
-    "product-detail": {
+    "search_box": {
+        "meli_logo_alt": "Mercado Libre",
+        "input_placeholder": "Nunca dejes de buscar",
+        "input_aria_label": "Ingresá lo que quieras encontrar",
+        "search_btn": "Buscar"
+    },
+    "product_detail": {
         "sold": "vendido",
         "solds": "vendidos",
-        "shipping-alt": "Enviado por Mercado Libre",
-        "buy-btn": "Comprar",
-        "product-description-title": " Descripción del producto"
+        "shipping_alt": "Enviado por Mercado Libre",
+        "buy_btn": "Comprar",
+        "product_description_title": " Descripción del producto"
     },
     "item-conditions": {
         "new": "Nuevo",
         "used": "Nsado",
         "not_specified": "No especifica"
     }
-  
+
 
 
 }

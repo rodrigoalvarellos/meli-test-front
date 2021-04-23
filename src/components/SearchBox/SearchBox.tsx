@@ -14,7 +14,7 @@ export interface ISearchBoxProps extends HTMLAttributes<HTMLElement> {}
 
 export const SearchBox: FC<ISearchBoxProps> = (props) => {
 
-  const sbTexts = texts["search-box"];
+  const sbTexts = texts["search_box"];
 
   const [value, setValue] = useState<string>("");
 
@@ -34,7 +34,7 @@ export const SearchBox: FC<ISearchBoxProps> = (props) => {
           <img
             className={styles.SearchBox__meli_logo}
             src={logo}
-            alt={sbTexts["meli-logo-alt"]}
+            alt={sbTexts["meli_logo_alt"]}
           />
         </Link>
 
@@ -42,8 +42,8 @@ export const SearchBox: FC<ISearchBoxProps> = (props) => {
           <input
             className={styles.SearchBox__search_input}
             type="text"
-            placeholder={sbTexts["input-placeholder"]}
-            aria-label={sbTexts["input-aria-label"]}
+            placeholder={sbTexts["input_placeholder"]}
+            aria-label={sbTexts["input_aria_label"]}
             value={value}
             onChange={(event: React.FormEvent<HTMLInputElement>) =>
               setValue(event.currentTarget.value)
@@ -53,7 +53,7 @@ export const SearchBox: FC<ISearchBoxProps> = (props) => {
           <button
             type="submit"
             className={styles.SearchBox__search_button}
-            aria-label={sbTexts["search-btn"]}           
+            aria-label={sbTexts["search_btn"]}           
           >
             <SearchIcon aria-hidden="true" />
           </button>

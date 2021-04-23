@@ -5,12 +5,18 @@ import { ProductDetail } from "../../components/ProductDetail/ProductDetail";
 import { getProductoDetail } from "../../services/items.service";
 import { ProductDetailItem } from "../../interfaces/product-detail.iterface";
 import { Breadcrumbs } from "../../components/Breadcrumbs/Breadcrumbs";
+import texts from "../../config/text.config.json";
 
 interface IProductPageProps extends RouteComponentProps {
   itemId?: string;
+  setMetaTags: Function;
 }
 
-export const ProductPage: FC<IProductPageProps> = ({ itemId, ...props }) => {
+export const ProductPage: FC<IProductPageProps> = ({
+  itemId,
+  setMetaTags,
+  ...props
+}) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [product, setProduct] = useState<ProductDetailItem>();
 
@@ -27,6 +33,11 @@ export const ProductPage: FC<IProductPageProps> = ({ itemId, ...props }) => {
         if (response && response.status === 200) {
           const data: ProductDetailItem = await response.json();
           setProduct(data);
+          setMetaTags({
+            title: `${texts.header_meta_tags.title} - ${data.item.title}`,
+            description: `${texts.header_meta_tags.title} - ${data.item.title}`,
+            keywords: data.categories.map((cat) => cat.name).join(","),
+          });
         } else {
           navigate("/");
         }

@@ -17,7 +17,7 @@ interface IProductDetail extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const ProductDetail: FC<IProductDetail> = ({ product, ...props }) => {
-  const pdTexts = texts["product-detail"];
+  const pdTexts = texts["product_detail"];
 
   const onBuy = () => {
     window.open(product.item.permalink, "_blank");
@@ -54,16 +54,16 @@ export const ProductDetail: FC<IProductDetail> = ({ product, ...props }) => {
                 <img
                   className={styles.ProductDetail__detail_shipping}
                   src={shippingImg}
-                  alt={pdTexts["shipping-alt"]}
+                  alt={pdTexts["shipping_alt"]}
                 />
               ) : null}
             </h2>
 
             <Button
               onClick={onBuy}
-              aria-label={pdTexts["buy-btn"]}
+              aria-label={pdTexts["buy_btn"]}
             >
-              {pdTexts["buy-btn"]}
+              {pdTexts["buy_btn"]}
             </Button>
           </div>
         </aside>
@@ -71,7 +71,7 @@ export const ProductDetail: FC<IProductDetail> = ({ product, ...props }) => {
 
       <section className={styles.ProductDetail__description_wrapper}>
         <h2 className={styles.ProductDetail__description_title}>
-          {pdTexts["product-description-title"]}
+          {pdTexts["product_description_title"]}
         </h2>
         <p className={styles.ProductDetail__description_text}>
           {product.item.description}

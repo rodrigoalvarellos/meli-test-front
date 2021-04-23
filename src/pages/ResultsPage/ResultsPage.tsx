@@ -17,10 +17,12 @@ import { SearchIcon } from "../../components/icons/SearchIcon";
 
 import texts from "../../config/text.config.json";
 
-interface IResultsPageProps extends RouteComponentProps {}
+interface IResultsPageProps extends RouteComponentProps {
+  setMetaTags: Function
+}
 
-export const ResultsPage: FC<IResultsPageProps> = (props) => {
-  const rsTexts = texts["results-page"];
+export const ResultsPage: FC<IResultsPageProps> = ({setMetaTags,...props}) => {
+  const rsTexts = texts.results_page;
   const location = useLocation();
 
   const [loading, setLoading] = useState<boolean>(false);
@@ -38,6 +40,11 @@ export const ResultsPage: FC<IResultsPageProps> = (props) => {
       if (response && response.status === 200) {
         const data: SearchResult = await response.json();
         setResults(data);
+        setMetaTags({
+          title: `${texts.header_meta_tags.title} - ${(query.search ? query.search : query.category)?.toUpperCase()}`,
+          description: `${texts.header_meta_tags.title} - ${query.search ? query.search : query.category}`,
+          keywords: data.categories.map( cat => cat.name).join(','),
+        });
       } else {
         setResults(null);
       }
@@ -58,7 +65,7 @@ export const ResultsPage: FC<IResultsPageProps> = (props) => {
           <div className={styles.ResultsPage__not_found_content}>
             <SearchIcon fill="#999999" />
             <p>             
-              {rsTexts["search-not-found"]} : <strong>"{query.search}"</strong>
+              {rsTexts["search_not_found"]} : <strong>"{query.search}"</strong>
             </p>
           </div>
         </Card>
