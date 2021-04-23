@@ -8,7 +8,7 @@ import { Link, navigate } from "@reach/router";
 
 import texts from '../../config/text.config.json';
 
-const DATA_TESTID = 'seachbox_testid';
+const DATA_TESTID = 'SEARCHBOX_TESTID';
 
 export interface ISearchBoxProps extends HTMLAttributes<HTMLElement> {}
 

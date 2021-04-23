@@ -10,6 +10,8 @@ import { setStatusText } from "../../helpers/helpers";
 import shippingImg from "../../assets/images/ic_shipping@2x.png";
 import noImage from "../../assets/images/no_image.png";
 
+const DATA_TESTID = 'PRODUCT_DETAIL_TESTID';
+
 interface IProductDetail extends HTMLAttributes<HTMLDivElement> {
   product: ProductDetailItem;
 }
@@ -22,7 +24,7 @@ export const ProductDetail: FC<IProductDetail> = ({ product, ...props }) => {
   };
 
   return (
-    <div className={styles.ProductDetail} {...props}>
+    <div className={styles.ProductDetail} {...props} data-testid={DATA_TESTID}>
       <div className={styles.ProductDetail__content_row}>
         <section className={styles.ProductDetail__image_wrapper}>
           <img

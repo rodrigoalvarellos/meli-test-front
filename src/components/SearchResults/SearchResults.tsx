@@ -4,6 +4,8 @@ import { SearchItem } from "../SearchItem/SearchItem";
 import styles from "./SearchResults.module.scss"; // Import css modules stylesheet as styles
 import { Item } from "../../interfaces/searchResult.interface";
 
+export const DATA_TESTID = 'SEARCH_LIST_TESTID';
+
 export interface ISearchResultsProps
   extends HTMLAttributes<HTMLDivElement>,
     RouteComponentProps {
@@ -12,7 +14,7 @@ export interface ISearchResultsProps
 
 export const SearchResults: FC<ISearchResultsProps> = ({ items, ...props }) => {
   return (
-    <div className={styles.SearchResults} {...props}>
+    <div className={styles.SearchResults} {...props} data-testid={DATA_TESTID}>
       <ul className={styles.SearchResults__list}>
         {items?.map((item) => (
           <li key={item.id}>
