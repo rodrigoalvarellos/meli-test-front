@@ -36,7 +36,7 @@ export const ResultsPage: FC<IResultsPageProps> = ({
   const [loading, setLoading] = useState<boolean>(false);
   const [results, setResults] = useState<SearchResult | null>();
   const query: SearchQueriesParameters = parse(location.search);
-
+  console.log('Hola');
   useEffect(() => {
     fetchSearchResult();
   }, [query.search, query.category]);
