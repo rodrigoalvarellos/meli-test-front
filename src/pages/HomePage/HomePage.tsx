@@ -15,3 +15,5 @@ export const HomePage: FC<IHomeProps> = (props) => (
         </div> */}
   </>
 );
+const a = (b: number) => b + 2;
+a('hola');
