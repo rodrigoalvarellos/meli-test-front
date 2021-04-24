@@ -16,4 +16,4 @@ export const HomePage: FC<IHomeProps> = (props) => (
   </>
 );
 const a = (b: number) => b + 2;
-a('hola');
+a('chau');
