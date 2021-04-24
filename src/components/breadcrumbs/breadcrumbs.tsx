@@ -11,6 +11,10 @@ export interface IBreadcrumbsProps extends HTMLAttributes<HTMLDivElement> {
   categories: Category[];
 }
 
+/**
+ * This component renders the list of categories and allows searching for these categories
+ * @param categories
+ */
 export const Breadcrumbs: FC<IBreadcrumbsProps> = ({
   categories,
   ...props

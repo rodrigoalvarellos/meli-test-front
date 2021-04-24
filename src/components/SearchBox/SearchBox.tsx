@@ -1,19 +1,22 @@
-import styles from "./SearchBox.module.scss"; // Import css modules stylesheet as styles
+import styles from "./SearchBox.module.scss";
 
-// Assets
-import logo from "../../assets/images/Logo_ML@2x.png.png";
 import { SearchIcon } from "../icons/SearchIcon";
 import { FC, HTMLAttributes, useState } from "react";
 import { Link, navigate } from "@reach/router";
 
-import texts from '../../config/text.config.json';
+// Assets
+import logo from "../../assets/images/Logo_ML@2x.png.png";
+import texts from "../../config/text.config.json";
 
-export const DATA_TESTID = 'SEARCHBOX_TESTID';
+export const DATA_TESTID = "SEARCHBOX_TESTID";
 
 export interface ISearchBoxProps extends HTMLAttributes<HTMLElement> {}
 
+/**
+ * This component is in charge of rendering the products search bar,
+ *  capturing the query and navigating to the results page. *
+ */
 export const SearchBox: FC<ISearchBoxProps> = (props) => {
-
   const sbTexts = texts["search_box"];
 
   const [value, setValue] = useState<string>("");
@@ -24,13 +27,17 @@ export const SearchBox: FC<ISearchBoxProps> = (props) => {
   };
 
   const clearSearchValue = (): void => {
-    setValue('');
-  }
+    setValue("");
+  };
 
   return (
     <header className={styles.SearchBox} {...props} data-testid={DATA_TESTID}>
       <div className={styles.SearchBox__wrapper}>
-        <Link to="/" className={styles.SearchBox__image_link} onClick={clearSearchValue}>
+        <Link
+          to="/"
+          className={styles.SearchBox__image_link}
+          onClick={clearSearchValue}
+        >
           <img
             className={styles.SearchBox__meli_logo}
             src={logo}
@@ -38,7 +45,7 @@ export const SearchBox: FC<ISearchBoxProps> = (props) => {
           />
         </Link>
 
-        <form  className={styles.SearchBox__form} onSubmit={onSearch}>
+        <form className={styles.SearchBox__form} onSubmit={onSearch}>
           <input
             className={styles.SearchBox__search_input}
             type="text"
@@ -53,7 +60,7 @@ export const SearchBox: FC<ISearchBoxProps> = (props) => {
           <button
             type="submit"
             className={styles.SearchBox__search_button}
-            aria-label={sbTexts["search_btn"]}           
+            aria-label={sbTexts["search_btn"]}
           >
             <SearchIcon aria-hidden="true" />
           </button>

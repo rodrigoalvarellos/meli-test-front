@@ -4,6 +4,9 @@ import { RouteComponentProps } from "@reach/router";
 
 interface IHomeProps extends RouteComponentProps {}
 
+/**
+ * This component represents the blank page when starting the application.
+ */
 export const HomePage: FC<IHomeProps> = (props) => {
   return (
     <>

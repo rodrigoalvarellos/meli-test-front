@@ -18,10 +18,16 @@ import { SearchIcon } from "../../components/icons/SearchIcon";
 import texts from "../../config/text.config.json";
 
 interface IResultsPageProps extends RouteComponentProps {
-  setMetaTags: Function
+  setMetaTags: Function;
 }
-
-export const ResultsPage: FC<IResultsPageProps> = ({setMetaTags,...props}) => {
+/**
+ * This component is responsible for obtaining the search results from the backend 
+ * and rendering the list of items and the breadcrumb. *
+ */
+export const ResultsPage: FC<IResultsPageProps> = ({
+  setMetaTags,
+  ...props
+}) => {
   const rsTexts = texts.results_page;
   const location = useLocation();
 
@@ -41,11 +47,17 @@ export const ResultsPage: FC<IResultsPageProps> = ({setMetaTags,...props}) => {
         const data: SearchResult = await response.json();
         setResults(data);
 
-        
-        const categoriesString = data.categories.map( cat => cat.name).join(',')
+        const categoriesString = data.categories
+          .map((cat) => cat.name)
+          .join(",");
+
         setMetaTags({
-          title: `${texts.header_meta_tags.title} - ${query.search ? query.search : categoriesString }`,
-          description: `${texts.header_meta_tags.title} - ${query.search ? query.search : categoriesString}`,
+          title: `${texts.header_meta_tags.title} - ${
+            query.search ? query.search : categoriesString
+          }`,
+          description: `${texts.header_meta_tags.title} - ${
+            query.search ? query.search : categoriesString
+          }`,
           keywords: categoriesString,
         });
       } else {
@@ -67,7 +79,7 @@ export const ResultsPage: FC<IResultsPageProps> = ({setMetaTags,...props}) => {
         <Card>
           <div className={styles.ResultsPage__not_found_content}>
             <SearchIcon fill="#999999" />
-            <p>             
+            <p>
               {rsTexts["search_not_found"]} : <strong>"{query.search}"</strong>
             </p>
           </div>

@@ -10,7 +10,10 @@ import noImage from "../../assets/images/no_image.png";
 export interface ISearchItemProps extends HTMLAttributes<HTMLDivElement> {
   item: Item;
 }
-
+/**
+ * This component renders an item from the results list.
+ * @param item 
+ */
 export const SearchItem: FC<ISearchItemProps> = ({ item, ...props }) => {
   const onItemClick: any = () => {
     navigate(`/items/${item.id}`);

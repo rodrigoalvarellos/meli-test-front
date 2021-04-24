@@ -16,6 +16,9 @@ interface IProductDetail extends HTMLAttributes<HTMLDivElement> {
   product: ProductDetailItem;
 }
 
+/**
+ * This component renders the detail of a product. Includes the title, price, condition, description, image, and more
+ */
 export const ProductDetail: FC<IProductDetail> = ({ product, ...props }) => {
   const pdTexts = texts["product_detail"];
 

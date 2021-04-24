@@ -12,6 +12,10 @@ interface IProductPageProps extends RouteComponentProps {
   setMetaTags: Function;
 }
 
+/**
+ * This component is responsible for obtaining the product detail from the backend.
+ * It also renders the product detail with the categories breadbrumb.
+ */
 export const ProductPage: FC<IProductPageProps> = ({
   itemId,
   setMetaTags,

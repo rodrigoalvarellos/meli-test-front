@@ -4,7 +4,7 @@ import { SearchItem } from "../SearchItem/SearchItem";
 import styles from "./SearchResults.module.scss"; // Import css modules stylesheet as styles
 import { Item } from "../../interfaces/searchResult.interface";
 
-export const DATA_TESTID = 'SEARCH_LIST_TESTID';
+export const DATA_TESTID = "SEARCH_LIST_TESTID";
 
 export interface ISearchResultsProps
   extends HTMLAttributes<HTMLDivElement>,
@@ -12,6 +12,10 @@ export interface ISearchResultsProps
   items?: Item[];
 }
 
+/**
+ * This component renders the list of items obtained from the product search.
+ * @param items[]
+ */
 export const SearchResults: FC<ISearchResultsProps> = ({ items, ...props }) => {
   return (
     <div className={styles.SearchResults} {...props} data-testid={DATA_TESTID}>
