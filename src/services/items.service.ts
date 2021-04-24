@@ -1,4 +1,4 @@
-import config from "../config/http.config.json";
+import config from '../config/http.config.json';
 
 const BASE_URL = `${config.http}://${config.host}:${config.port}/${config.api}`;
 
@@ -14,9 +14,9 @@ export interface SearchQueriesParameters {
  */
 export const searchItems = ({
   search,
-  category,
+  category
 }: SearchQueriesParameters): Promise<Response> => {
-  let query: string = "";
+  let query: string = '';
 
   if (search) {
     query = `?q=${search}`;
@@ -31,6 +31,5 @@ export const searchItems = ({
  * @param {object} params { productId } productId
  * @returns {Promise} Promise<ProductDetailItem>
  */
-export const getProductoDetail = (id: string): Promise<Response> => {
-  return fetch(`${BASE_URL}/items/${id}`);
-};
+export const getProductoDetail = (id: string): Promise<Response> =>
+  fetch(`${BASE_URL}/items/${id}`);

@@ -1,8 +1,8 @@
-import { Category } from "./category.interface";
+import { Category } from './category.interface';
 
-export interface SearchResult { 
+export interface SearchResult {
   categories: Category[];
-  items: Item[];  
+  items: Item[];
 }
 
 export interface Item {
@@ -12,7 +12,7 @@ export interface Item {
     name: string;
     lastname: string;
   };
-  title: string;  
+  title: string;
   price: {
     currency: string;
     amount: string;
@@ -23,6 +23,5 @@ export interface Item {
   free_shipping: boolean;
   address: {
     state: string;
-  }
+  };
 }
-

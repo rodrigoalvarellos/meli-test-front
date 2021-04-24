@@ -1,41 +1,37 @@
- @import '../../assets/styles/variables.scss';
+@import '../../assets/styles/variables.scss';
 
- $rp-width-xl:$ml-width-xl;
- $rp-width-md:$ml-width-md;
- $rp-width-sm:$ml-width-sm;
+$rp-width-xl: $ml-width-xl;
+$rp-width-md: $ml-width-md;
+$rp-width-sm: $ml-width-sm;
 
 .ResultsPage {
+  &__not_found {
+    margin-top: 32px;
+    width: $rp-width-xl;
+  }
 
-    &__not_found{
-        margin-top: 32px;
-        width: $rp-width-xl;
-    }
-
-    &__not_found_content {        
-        height: 200px;
-        display: flex;
-        // flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: $ml-color-text-secondary;
-    }
+  &__not_found_content {
+    height: 200px;
+    display: flex;
+    // flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $ml-color-text-secondary;
+  }
 }
 
-
 @media (max-width: 1200px) {
-    .ResultsPage {
-
-        &__not_found{
-            width: $rp-width-md;
-        }
+  .ResultsPage {
+    &__not_found {
+      width: $rp-width-md;
     }
   }
-  
-  @media (max-width: 920px) {
-    .ResultsPage {
+}
 
-        &__not_found{
-            width: $rp-width-sm;
-        }
+@media (max-width: 920px) {
+  .ResultsPage {
+    &__not_found {
+      width: $rp-width-sm;
     }
   }
+}

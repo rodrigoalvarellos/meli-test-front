@@ -1,27 +1,29 @@
-import React, { useEffect, useState } from "react";
-import { RouteComponentProps, useLocation } from "@reach/router";
-import { SearchResults } from "../../components/SearchResults/SearchResults";
-import { Breadcrumbs } from "../../components/Breadcrumbs/Breadcrumbs";
-import { FC } from "react";
-import { parse } from "query-string";
+/* eslint-disable react-hooks/exhaustive-deps */
+
+import { useEffect, useState, FC } from 'react';
+import { RouteComponentProps, useLocation } from '@reach/router';
+import { parse } from 'query-string';
+
+import { SearchResults } from '../../components/SearchResults/SearchResults';
+import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
+import { SearchIcon } from '../../components/icons/SearchIcon';
+import { Loading } from '../../components/Loading/Loading';
+import { Card } from '../../components/Card/Card';
+
 import {
   searchItems,
-  SearchQueriesParameters,
-} from "../../services/items.service";
-import { Loading } from "../../components/Loading/Loading";
-import { SearchResult } from "../../interfaces/searchResult.interface";
-import { Card } from "../../components/Card/Card";
+  SearchQueriesParameters
+} from '../../services/items.service';
 
-import styles from "./ResultsPage.module.scss";
-import { SearchIcon } from "../../components/icons/SearchIcon";
-
-import texts from "../../config/text.config.json";
+import { SearchResult } from '../../interfaces/searchResult.interface';
+import styles from './ResultsPage.module.scss';
+import texts from '../../config/text.config.json';
 
 interface IResultsPageProps extends RouteComponentProps {
   setMetaTags: Function;
 }
 /**
- * This component is responsible for obtaining the search results from the backend 
+ * This component is responsible for obtaining the search results from the backend
  * and rendering the list of items and the breadcrumb. *
  */
 export const ResultsPage: FC<IResultsPageProps> = ({
@@ -49,7 +51,7 @@ export const ResultsPage: FC<IResultsPageProps> = ({
 
         const categoriesString = data.categories
           .map((cat) => cat.name)
-          .join(",");
+          .join(',');
 
         setMetaTags({
           title: `${texts.header_meta_tags.title} - ${
@@ -58,7 +60,7 @@ export const ResultsPage: FC<IResultsPageProps> = ({
           description: `${texts.header_meta_tags.title} - ${
             query.search ? query.search : categoriesString
           }`,
-          keywords: categoriesString,
+          keywords: categoriesString
         });
       } else {
         setResults(null);
@@ -80,7 +82,7 @@ export const ResultsPage: FC<IResultsPageProps> = ({
           <div className={styles.ResultsPage__not_found_content}>
             <SearchIcon fill="#999999" />
             <p>
-              {rsTexts["search_not_found"]} : <strong>"{query.search}"</strong>
+              {rsTexts.search_not_found} : <strong>"{query.search}"</strong>
             </p>
           </div>
         </Card>
@@ -89,9 +91,9 @@ export const ResultsPage: FC<IResultsPageProps> = ({
   }
 
   return (
-    <React.Fragment>
+    <>
       <Breadcrumbs categories={results?.categories || []} />
       <SearchResults items={results?.items} />
-    </React.Fragment>
+    </>
   );
 };

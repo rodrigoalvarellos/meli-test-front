@@ -1,18 +1,14 @@
-import {
-  getByLabelText,
-  getByTestId,
-  render,
-} from "@testing-library/react";
+import { getByLabelText, getByTestId, render } from '@testing-library/react';
 
-import { SearchBox, DATA_TESTID } from "./SearchBox";
+import { SearchBox, DATA_TESTID } from './SearchBox';
 
-import texts from "../../config/text.config.json";
+import texts from '../../config/text.config.json';
 
-describe("SearchBox test suit", () => {
-  test("Should have an image with ML logo", () => {
+describe('SearchBox test suit', () => {
+  test('Should have an image with ML logo', () => {
     const { container } = render(<SearchBox />);
     const header = getByTestId(container, DATA_TESTID);
-    const img = header.querySelector("img");
+    const img = header.querySelector('img');
     expect(img).toBeTruthy();
     expect(img?.alt).toBe(texts.search_box.meli_logo_alt);
   });
@@ -22,11 +18,11 @@ describe("SearchBox test suit", () => {
     const searchInput = getByLabelText(
       container,
       texts.search_box.input_aria_label,
-      { selector: "input" }
+      { selector: 'input' }
     );
     expect(searchInput).toBeTruthy();
     expect(searchInput).toHaveAttribute(
-      "placeholder",
+      'placeholder',
       texts.search_box.input_placeholder
     );
   });
@@ -36,16 +32,16 @@ describe("SearchBox test suit", () => {
     const searchButton = getByLabelText(
       container,
       texts.search_box.search_btn,
-      { selector: "button" }
+      { selector: 'button' }
     );
     // const searchButton = container.querySelector('button[type="submit"]');
     expect(searchButton).toBeTruthy();
-    expect(searchButton).toHaveAttribute("type", "submit");
+    expect(searchButton).toHaveAttribute('type', 'submit');
   });
 
-  test("should exist a form element", () => {
+  test('should exist a form element', () => {
     const { container } = render(<SearchBox />);
-    const form = container.querySelector("form");
+    const form = container.querySelector('form');
     expect(form).toBeTruthy();
 
     // const onSearch = jest.fn();

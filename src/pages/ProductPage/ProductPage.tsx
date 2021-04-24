@@ -1,11 +1,15 @@
-import { navigate, RouteComponentProps } from "@reach/router";
-import React, { FC, useEffect, useState } from "react";
-import { Loading } from "../../components/Loading/Loading";
-import { ProductDetail } from "../../components/ProductDetail/ProductDetail";
-import { getProductoDetail } from "../../services/items.service";
-import { ProductDetailItem } from "../../interfaces/product-detail.iterface";
-import { Breadcrumbs } from "../../components/Breadcrumbs/Breadcrumbs";
-import texts from "../../config/text.config.json";
+/* eslint-disable react-hooks/exhaustive-deps */
+
+import { FC, useEffect, useState } from 'react';
+import { navigate, RouteComponentProps } from '@reach/router';
+
+import { Loading } from '../../components/Loading/Loading';
+import { ProductDetail } from '../../components/ProductDetail/ProductDetail';
+import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
+
+import { ProductDetailItem } from '../../interfaces/product-detail.iterface';
+import { getProductoDetail } from '../../services/items.service';
+import texts from '../../config/text.config.json';
 
 interface IProductPageProps extends RouteComponentProps {
   itemId?: string;
@@ -40,14 +44,14 @@ export const ProductPage: FC<IProductPageProps> = ({
           setMetaTags({
             title: `${texts.header_meta_tags.title} - ${data.item.title}`,
             description: `${texts.header_meta_tags.title} - ${data.item.title}`,
-            keywords: data.categories.map((cat) => cat.name).join(","),
+            keywords: data.categories.map((cat) => cat.name).join(',')
           });
         } else {
-          navigate("/");
+          navigate('/');
         }
       }
     } catch (error) {
-      navigate("/");
+      navigate('/');
     }
     setLoading(false);
   };
@@ -63,7 +67,7 @@ export const ProductPage: FC<IProductPageProps> = ({
         <ProductDetail product={product} />
       </>
     );
-  } else {
-    return null;
   }
+
+  return null;
 };
