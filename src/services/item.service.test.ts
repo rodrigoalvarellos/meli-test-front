@@ -24,9 +24,10 @@ describe("ItemService test suit", () => {
       .mockImplementation(setupFetchStub(searchMockedResult));
 
     const res = await searchItems({ search: "iPhone" });
+    const data = await res.json();
     
-    expect(res.items[0]).not.toBeNull();
-    expect(res.items[0].author.name).toBe(
+    expect(data.items[0]).not.toBeNull();
+    expect(data.items[0].author.name).toBe(
       SEARCH_RESULTS_MOCK.items[0].author.name
     );
   });
@@ -37,7 +38,8 @@ describe("ItemService test suit", () => {
       .mockImplementation(setupFetchStub(productDetailResultMock));
 
     const res = await getProductoDetail(PRODUCT_DETAIL_MOCK.item.id);
-    expect(res.author).not.toBeNull();
-    expect(res.author.name).toBe(PRODUCT_DETAIL_MOCK.author.name);
+    const data = await res.json();
+    expect(data.author).not.toBeNull();
+    expect(data.author.name).toBe(PRODUCT_DETAIL_MOCK.author.name);
   });
 });

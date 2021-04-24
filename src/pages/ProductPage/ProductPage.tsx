@@ -54,10 +54,10 @@ export const ProductPage: FC<IProductPageProps> = ({
 
   if (product) {
     return (
-      <React.Fragment>
+      <>
         <Breadcrumbs categories={product?.categories || []} />
         <ProductDetail product={product} />
-      </React.Fragment>
+      </>
     );
   } else {
     return null;
