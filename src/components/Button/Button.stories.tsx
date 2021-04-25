@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from './xxxButton';
+import { Button } from './Button';
 
 const config = {
   title: 'Buttton Primary',

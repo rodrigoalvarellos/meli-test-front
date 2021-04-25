@@ -1,5 +1,5 @@
 import { getByTestId, render } from '@testing-library/react';
-import { Breadcrumbs, DATA_TESTID } from './xxxBreadcrumbs';
+import { Breadcrumbs, DATA_TESTID } from './Breadcrumbs';
 import { Category } from '../../interfaces/category.interface';
 import { CATEGORIES_MOCK } from '../../mocks/categories.mock';
 

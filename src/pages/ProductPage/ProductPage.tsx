@@ -3,9 +3,9 @@
 import { FC, useEffect, useState } from 'react';
 import { navigate, RouteComponentProps } from '@reach/router';
 
-import { Loading } from '../../components/xxxLoading/xxxLoading';
+import { Loading } from '../../components/Loading/Loading';
 import { ProductDetail } from '../../components/ProductDetail/ProductDetail';
-import { Breadcrumbs } from '../../components/xxxBreadcrumbs/xxxBreadcrumbs';
+import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
 
 import { ProductDetailItem } from '../../interfaces/product-detail.iterface';
 import { getProductoDetail } from '../../services/items.service';
