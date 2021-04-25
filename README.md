@@ -31,7 +31,9 @@ El proyecto cuenta con test unitarios realizados con Jest y React-testing-librar
 
 ### Correr Test Unitarios
 
-`npm run test`
+`npm run test` Corre todos los test unitarios en modo watch.
+
+`npm run test:coverage` Genera el informe de coverage del proyecto.
 
 ### Correr Test E2E con Cypress
 
@@ -56,3 +58,13 @@ para correr Cypress en con su entorno visual.
 Este proyecto cuenta con Storybook para la documentación de los componentes. Para correrlo, utilize el siguiente comando.
 
 `npm run storybook`
+
+## Dependencias principales
+
+- [React](https://github.com/facebook/react/)
+- [React Helmet](https://github.com/nfl/react-helmet)
+- [Cypress](https://github.com/cypress-io/cypress)
+- [Storybooks](https://github.com/storybookjs/storybook)
+- [ESLint](https://github.com/eslint/eslint)
+- [Prettier](https://github.com/prettier/prettier)
+- [Husky](https://github.com/typicode/husky)

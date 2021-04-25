@@ -34,6 +34,7 @@
     "format": "prettier --write src/**/*.{ts,tsx,scss,css,json}",
     "isready": "npm run format && npm run lint && npm run build",
     "test": "react-scripts test",
+    "test:coverage": "npm test -- --coverage --watchAll=false",
     "cypress:run": "cypress run",
     "cypress:open": "cypress open",
     "test:e2e:run": "npm-run-all -p start cypress:run",
