@@ -3,7 +3,7 @@
 import { FC, useEffect, useState } from 'react';
 import { navigate, RouteComponentProps } from '@reach/router';
 
-import { Loading } from '../../components/Loading/Loading';
+import { Loading } from '../../components/xxxLoading/xxxLoading';
 import { ProductDetail } from '../../components/ProductDetail/ProductDetail';
 import { Breadcrumbs } from '../../components/xxxBreadcrumbs/xxxBreadcrumbs';
 
