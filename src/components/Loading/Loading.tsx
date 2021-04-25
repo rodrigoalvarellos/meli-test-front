@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes } from 'react';
-import './xxxLoading.scss';
+import './Loading.scss';
 
 interface ILoadingProps extends HTMLAttributes<HTMLDivElement> {}
 
