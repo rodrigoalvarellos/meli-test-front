@@ -1,28 +1,32 @@
-import styles from "./ProductDetail.module.scss";
-import { FC, HTMLAttributes } from "react";
-import { Button } from "../Button/Button";
-import texts from "../../config/text.config.json";
+import { FC, HTMLAttributes } from 'react';
 
-import { ProductDetailItem } from "../../interfaces/product-detail.iterface";
-import { setStatusText } from "../../helpers/helpers";
+import { Button } from '../Button/Button';
+import { ProductDetailItem } from '../../interfaces/product-detail.iterface';
+import { setStatusText } from '../../helpers/helpers';
 
-// Assets
-import shippingImg from "../../assets/images/ic_shipping@2x.png";
-import noImage from "../../assets/images/no_image.png";
+import styles from './ProductDetail.module.scss';
+import texts from '../../config/text.config.json';
+import shippingImg from '../../assets/images/ic_shipping@2x.png';
+import noImage from '../../assets/images/no_image.png';
+
+const DATA_TESTID = 'PRODUCT_DETAIL_TESTID';
 
 interface IProductDetail extends HTMLAttributes<HTMLDivElement> {
   product: ProductDetailItem;
 }
 
+/**
+ * This component renders the detail of a product. Includes the title, price, condition, description, image, and more
+ */
 export const ProductDetail: FC<IProductDetail> = ({ product, ...props }) => {
-  const pdTexts = texts["product-detail"];
+  const pdTexts = texts.product_detail;
 
   const onBuy = () => {
-    window.open(product.item.permalink, "_blank");
+    window.open(product.item.permalink, '_blank');
   };
 
   return (
-    <div className={styles.ProductDetail} {...props}>
+    <div className={styles.ProductDetail} {...props} data-testid={DATA_TESTID}>
       <div className={styles.ProductDetail__content_row}>
         <section className={styles.ProductDetail__image_wrapper}>
           <img
@@ -52,16 +56,13 @@ export const ProductDetail: FC<IProductDetail> = ({ product, ...props }) => {
                 <img
                   className={styles.ProductDetail__detail_shipping}
                   src={shippingImg}
-                  alt={pdTexts["shipping-alt"]}
+                  alt={pdTexts.shipping_alt}
                 />
               ) : null}
             </h2>
 
-            <Button
-              onClick={onBuy}
-              aria-label={pdTexts["buy-btn"]}
-            >
-              {pdTexts["buy-btn"]}
+            <Button onClick={onBuy} aria-label={pdTexts.buy_btn}>
+              {pdTexts.buy_btn}
             </Button>
           </div>
         </aside>
@@ -69,7 +70,7 @@ export const ProductDetail: FC<IProductDetail> = ({ product, ...props }) => {
 
       <section className={styles.ProductDetail__description_wrapper}>
         <h2 className={styles.ProductDetail__description_title}>
-          {pdTexts["product-description-title"]}
+          {pdTexts.product_description_title}
         </h2>
         <p className={styles.ProductDetail__description_text}>
           {product.item.description}

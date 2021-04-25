@@ -1,4 +1,4 @@
-@import "../../assets/styles/variables.scss";
+@import '../../assets/styles/variables.scss';
 
 $bc-width-xl: $ml-width-xl;
 $bc-width-md: $ml-width-md;
@@ -17,7 +17,7 @@ $bc-width-sm: $ml-width-sm;
 
   &__list_item {
     display: inline-flex;
-    align-items: center;    
+    align-items: center;
   }
 
   // &__list_item + &__list_item :before {
@@ -39,7 +39,6 @@ $bc-width-sm: $ml-width-sm;
   &__link:focus {
     color: $ml-color-blue;
   }
-  
 }
 
 @media (max-width: 1200px) {

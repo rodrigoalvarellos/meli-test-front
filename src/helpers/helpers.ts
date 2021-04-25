@@ -1,18 +1,18 @@
-import texts from "../config/text.config.json";
+import texts from '../config/text.config.json';
 
 enum Conditions {
-  New = "new",
-  Used = "used",
-  NotSpecified = "not_specified",
+  New = 'new',
+  Used = 'used',
+  NotSpecified = 'not_specified'
 }
 
 /**
  * Set product condition
  * @param {condition} condition  - input values 'new', 'used', 'not_specified'
- * @return {string} translated string 
+ * @return {string} translated string
  */
 export const setStatusText = (condition: string): string => {
-  const conditionTexts = texts["item-conditions"];
+  const conditionTexts = texts['item-conditions'];
 
   switch (condition) {
     case Conditions.New:

@@ -1,5 +1,5 @@
-@import "../../assets/styles/mixins/mixins.scss";
-@import "../../assets/styles/variables.scss";
+@import '../../assets/styles/mixins/mixins.scss';
+@import '../../assets/styles/variables.scss';
 
 $pd-width-xl: $ml-width-xl;
 $pd-width-md: $ml-width-md;
@@ -40,7 +40,7 @@ $pd-description-text-fs: 16px;
     max-height: 680px;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     // margin-right: 16px;
     // margin-bottom: 16px;
   }

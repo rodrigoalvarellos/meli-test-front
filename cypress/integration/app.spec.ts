@@ -1,28 +1,60 @@
-describe("The Home Page", () => {
-
-  it("shows the initial content", () => {
+describe("App Page", () => {
+  beforeEach(() => {
+    cy.intercept("http://localhost:3500/api/items?q=*", {
+      fixture: "search.results.json",
+    }).as("searchResults");
+    cy.intercept("http://localhost:3500/api/items?category=*", {
+      fixture: "search.results.json",
+    }).as("categorySearchResults");
+    cy.intercept("http://localhost:3500/api/items/*", {
+      fixture: "product.detail.json",
+    });
     cy.visit("/");
-    
-    cy.get('input').type('bicicleta');
-    cy.get('button').click();
+  });
 
-    cy.wait(500);
+  it("should search, find results, navigate to the firt one and show content correctly ", () => {
+    cy.get("input").type("iphone");
+    cy.get("button").click();
 
-    
-    
-    // expect(true).to.equal(true);
-    cy.url().should('eq', 'http://localhost:3000/items?search=bicicleta');
+    cy.wait("@searchResults");
 
-    
-    // cy.get('input').should()
+    cy.url().should("eq", "http://localhost:3000/items?search=iphone");
 
-    // cy.get();
+    const listItemsFirstElement = cy
+      .get(`[data-testid="SEARCH_LIST_TESTID"]>ul>li`)
+      .first();
 
-    //   cy.get(".Text__Title-Endpoint > span").should("contain", "Welcome!");
+    listItemsFirstElement.click();
+    cy.url().should("eq", "http://localhost:3000/items/MLA914734725");
 
-    //   cy.get(".Text__Description-Endpoint").should(
-    //     "contain",
-    //     "You can navigate and search endpoints."
-    //   );
+    const productDetail = cy.get(`[data-testid="PRODUCT_DETAIL_TESTID"]`);
+    productDetail.should("contain.text", "iPhone 11 64 Gb Negro");
+  });
+
+  it("should search by category when breadcrumb link is clicked ", () => {
+    cy.get("input").type("iphone");
+    cy.get("button").click();
+
+    cy.wait("@searchResults");
+
+    const firstBreadcrumbElement = cy
+      .get('[data-testid="BREADCRUMB_TESTID"]>ul>li>a')
+      .first();
+    firstBreadcrumbElement.click();
+    cy.url().should("eq", "http://localhost:3000/items?category=MLA1051");
+  });
+
+  it("should navigate to home when ML logo is clicked", () => {
+    cy.get("input").type("iphone");
+    cy.get("button").click();
+
+    cy.wait("@searchResults");
+
+    cy.url().should("eq", "http://localhost:3000/items?search=iphone");
+
+    const logoML = cy.get(`[data-testid="SEARCHBOX_TESTID"]>*>a`);
+    logoML.click();
+
+    cy.url().should("eq", "http://localhost:3000/");
   });
 });

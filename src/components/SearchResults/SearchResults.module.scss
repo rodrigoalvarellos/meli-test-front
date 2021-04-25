@@ -1,4 +1,4 @@
-@import "../../assets/styles/variables.scss";
+@import '../../assets/styles/variables.scss';
 
 $li-width-xl: $ml-width-xl;
 $li-width-md: $ml-width-md;
@@ -15,10 +15,6 @@ $li-width-sm: $ml-width-sm;
     margin: 0;
     padding: 0;
   }
-
-//   &__list_item {
-    
-//   }
 }
 
 @media (max-width: 1200px) {

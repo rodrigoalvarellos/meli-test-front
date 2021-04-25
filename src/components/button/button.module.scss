@@ -1,6 +1,5 @@
-@import "../../assets/styles/variables.scss";
-@import "../../assets/styles/mixins/mixins.scss";
-
+@import '../../assets/styles/variables.scss';
+@import '../../assets/styles/mixins/mixins.scss';
 
 .Button {
   background-color: $ml-color-blue;
@@ -10,16 +9,16 @@
   border: 0;
   width: 100%;
   font-family: inherit;
-  outline-color: lighten($ml-color-blue,50%); 
+  outline-color: lighten($ml-color-blue, 50%);
   outline-width: 2px;
-  @include text-format(16px, #FFF);
+  @include text-format(16px, #fff);
 }
 
-.Button:focus {    
-    outline-color: lighten($ml-color-blue,10%);   
+.Button:focus {
+  outline-color: lighten($ml-color-blue, 10%);
 }
 
 .Button:active {
-    transform: scale(0.98);
-    background-color: darken($ml-color-blue, 10%);    
+  transform: scale(0.98);
+  background-color: darken($ml-color-blue, 10%);
 }

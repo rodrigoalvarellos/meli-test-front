@@ -1,22 +1,24 @@
-import styles from "./SearchBox.module.scss"; // Import css modules stylesheet as styles
+import { FC, HTMLAttributes, useState } from 'react';
+import { Link, navigate } from '@reach/router';
 
-// Assets
-import logo from "../../assets/images/Logo_ML@2x.png.png";
-import { SearchIcon } from "../icons/SearchIcon";
-import { FC, HTMLAttributes, useState } from "react";
-import { Link, navigate } from "@reach/router";
+import { SearchIcon } from '../icons/SearchIcon';
 
+import styles from './SearchBox.module.scss';
+import logo from '../../assets/images/Logo_ML@2x.png.png';
 import texts from '../../config/text.config.json';
 
-const DATA_TESTID = 'seachbox_testid';
+export const DATA_TESTID = 'SEARCHBOX_TESTID';
 
 export interface ISearchBoxProps extends HTMLAttributes<HTMLElement> {}
 
+/**
+ * This component is in charge of rendering the products search bar,
+ *  capturing the query and navigating to the results page. *
+ */
 export const SearchBox: FC<ISearchBoxProps> = (props) => {
+  const sbTexts = texts.search_box;
 
-  const sbTexts = texts["search-box"];
-
-  const [value, setValue] = useState<string>("");
+  const [value, setValue] = useState<string>('');
 
   const onSearch = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
@@ -25,25 +27,29 @@ export const SearchBox: FC<ISearchBoxProps> = (props) => {
 
   const clearSearchValue = (): void => {
     setValue('');
-  }
+  };
 
   return (
     <header className={styles.SearchBox} {...props} data-testid={DATA_TESTID}>
       <div className={styles.SearchBox__wrapper}>
-        <Link to="/" className={styles.SearchBox__image_link} onClick={clearSearchValue}>
+        <Link
+          to="/"
+          className={styles.SearchBox__image_link}
+          onClick={clearSearchValue}
+        >
           <img
             className={styles.SearchBox__meli_logo}
             src={logo}
-            alt={sbTexts["meli-logo-alt"]}
+            alt={sbTexts.meli_logo_alt}
           />
         </Link>
 
-        <form  className={styles.SearchBox__form} onSubmit={onSearch}>
+        <form className={styles.SearchBox__form} onSubmit={onSearch}>
           <input
             className={styles.SearchBox__search_input}
             type="text"
-            placeholder={sbTexts["input-placeholder"]}
-            aria-label={sbTexts["input-aria-label"]}
+            placeholder={sbTexts.input_placeholder}
+            aria-label={sbTexts.input_aria_label}
             value={value}
             onChange={(event: React.FormEvent<HTMLInputElement>) =>
               setValue(event.currentTarget.value)
@@ -53,7 +59,7 @@ export const SearchBox: FC<ISearchBoxProps> = (props) => {
           <button
             type="submit"
             className={styles.SearchBox__search_button}
-            aria-label={sbTexts["search-btn"]}           
+            aria-label={sbTexts.search_btn}
           >
             <SearchIcon aria-hidden="true" />
           </button>

@@ -1,8 +1,6 @@
 {
-    "http": "http",
-    "port": "3500",
-    "host": "localhost",
-    "api": "api"
+  "http": "http",
+  "port": "3500",
+  "host": "localhost",
+  "api": "api"
 }
-
-  
