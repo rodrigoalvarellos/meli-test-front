@@ -68,7 +68,7 @@ $ npm run cypress:open
 
 Se configuró el uso de ESLint y Prettier, utilizando la guia de estilos de Airbnb.
 
-Se utiliza Husky para correr el linter y los nit tests al momento de hacer commit del código.
+Se utiliza Husky para correr el linter y los unit tests al momento de hacer commit del código.
 
 Dispone de los siguientes comandos para utilizar:
 
