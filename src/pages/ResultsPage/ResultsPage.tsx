@@ -4,8 +4,8 @@ import { useEffect, useState, FC } from 'react';
 import { RouteComponentProps, useLocation } from '@reach/router';
 import { parse } from 'query-string';
 
+import { Breadcrumbs } from '../../components/xxxBreadcrumbs/xxxBreadcrumbs';
 import { SearchResults } from '../../components/SearchResults/SearchResults';
-import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
 import { SearchIcon } from '../../components/icons/SearchIcon';
 import { Loading } from '../../components/Loading/Loading';
 import { Card } from '../../components/Card/Card';

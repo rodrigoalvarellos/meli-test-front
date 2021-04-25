@@ -5,7 +5,7 @@ import { navigate, RouteComponentProps } from '@reach/router';
 
 import { Loading } from '../../components/Loading/Loading';
 import { ProductDetail } from '../../components/ProductDetail/ProductDetail';
-import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
+import { Breadcrumbs } from '../../components/xxxBreadcrumbs/xxxBreadcrumbs';
 
 import { ProductDetailItem } from '../../interfaces/product-detail.iterface';
 import { getProductoDetail } from '../../services/items.service';

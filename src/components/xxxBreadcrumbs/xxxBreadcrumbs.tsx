@@ -1,6 +1,6 @@
 import { FC, HTMLAttributes } from 'react';
 import { Link } from '@reach/router';
-import styles from './Breadcrumbs.module.scss';
+import styles from './xxxBreadcrumbs.module.scss';
 import { Category } from '../../interfaces/category.interface';
 import { ChevronIcon } from '../icons/ChevronRight';
 
