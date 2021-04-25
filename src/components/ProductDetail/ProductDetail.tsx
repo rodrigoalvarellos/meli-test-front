@@ -1,6 +1,6 @@
 import { FC, HTMLAttributes } from 'react';
 
-import { Button } from '../Button/Button';
+import { Button } from '../xxxButton/xxxButton';
 import { ProductDetailItem } from '../../interfaces/product-detail.iterface';
 import { setStatusText } from '../../helpers/helpers';
 

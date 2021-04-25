@@ -7,8 +7,8 @@ import { parse } from 'query-string';
 import { Breadcrumbs } from '../../components/xxxBreadcrumbs/xxxBreadcrumbs';
 import { SearchResults } from '../../components/SearchResults/SearchResults';
 import { SearchIcon } from '../../components/icons/SearchIcon';
-import { Loading } from '../../components/Loading/Loading';
-import { Card } from '../../components/Card/Card';
+import { Loading } from '../../components/xxxLoading/xxxLoading';
+import { Card } from '../../components/xxxCard/xxxCard';
 
 import {
   searchItems,
