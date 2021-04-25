@@ -1,46 +1,58 @@
-# Getting Started with Create React App
+# Mercado Libre Front-End Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyecto de prueba técnica de Mercado Libre.\
+Es necesario correr el backend publicado en el siguiente repositorio: [rodrigoalvarellos/meli-test-backend](https://github.com/rodrigoalvarellos/meli-test-backend).
 
-## Available Scripts
+## Instalación
 
-In the project directory, you can run:
+Una vez descargado el repositorio use [npm](https://www.npmjs.com/) para instalar los paquetes necesarios.
 
-### `npm start`
+`npm i`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Iniciar la aplicación
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+En este proyecto, se puede correr los siguientes scripts:
 
-### `npm test`
+`npm start`
+Correr la aplicación en modo desarrollo.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Abrir [http://localhost:3000](http://localhost:3000) para verlo en el navegador.
 
-### `npm run build`
+## Poner en producción
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Para obtener un bundle optimizado para producción utilize el siguiente comando.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`npm build`
+Generar un build para producción en la carpeta 'build'
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Testing
 
-### `npm run eject`
+El proyecto cuenta con test unitarios realizados con Jest y React-testing-library. Para los test E2E se utiliza Cypress.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Correr Test Unitarios
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`npm run test`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Correr Test E2E con Cypress
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Es necesario tener corriendo la aplicación para poder realizar las pruebas "E2E".
 
-## Learn More
+`npm run test:e2e:run`
+Corre la aplicación en modo desarrollo y Cypress en modo run.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`npm run test:e2e:open`
+Corre la aplicación en modo desarrollo y Cypress en modo open.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Si ya tiene corriendo la aplicación en modo desarrollo, puede utilizar los siguientes comandos para correr solo Cypress.
+
+`npm run cypress:run`
+para correr Cypress en modo headless.
+
+`npm run cypress:open`
+para correr Cypress en con su entorno visual.
+
+## Storybook
+
+Este proyecto cuenta con Storybook para la documentación de los componentes. Para correrlo, utilize el siguiente comando.
+
+`npm run storybook`
