@@ -66,7 +66,11 @@ $ npm run cypress:open
 
 ## Linters y Formatters
 
-Se configuró el uso de ESLint y Prettier, utilizando la guia de estilos de Airbnb. Dispone de los siguientes comandos para utilizar:
+Se configuró el uso de ESLint y Prettier, utilizando la guia de estilos de Airbnb.
+
+Se utiliza Husky para correr el linter y los nit tests al momento de hacer commit del código.
+
+Dispone de los siguientes comandos para utilizar:
 
 ```bash
 # Validar si el proyecto tiene errores de Lint
