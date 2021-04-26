@@ -9,7 +9,7 @@ import texts from '../../config/text.config.json';
 import shippingImg from '../../assets/images/ic_shipping@2x.png';
 import noImage from '../../assets/images/no_image.png';
 
-const DATA_TESTID = 'PRODUCT_DETAIL_TESTID';
+export const DATA_TESTID = 'PRODUCT_DETAIL_TESTID';
 
 interface IProductDetail extends HTMLAttributes<HTMLDivElement> {
   product: ProductDetailItem;
