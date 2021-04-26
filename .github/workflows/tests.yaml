@@ -26,3 +26,9 @@ jobs:
         with:
           build: npm run build
           start: npm start
+      - name: Run Codecov coverage colector
+        uses: codecov/codecov-action@v1.0.15
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage/coverage-final.json
+          flags: unittests
