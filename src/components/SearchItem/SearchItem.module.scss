@@ -1,8 +1,9 @@
 @import '../../assets/styles/variables.scss';
 @import '../../assets/styles/mixins/mixins.scss';
 
-$li-title-fs: 18px;
-$li-price-fs: 24px;
+$si-title-fs: 18px;
+$si-price-fs: 24px;
+$si-location-fs: 12px;
 
 .search_item {
   background-color: #fff;
@@ -39,7 +40,7 @@ $li-price-fs: 24px;
   }
 
   &__price {
-    @include text-format($li-price-fs, $ml-color-text-primary, 500);
+    @include text-format($si-price-fs, $ml-color-text-primary, 500);
     margin-right: 16px;
   }
 
@@ -60,12 +61,11 @@ $li-price-fs: 24px;
 
   &__location {
     width: 25%;
-    color: $ml-color-gray-2;
-    font-size: $ml-font-size-12;
+    @include text-format($si-location-fs, $ml-color-text-secondary);
   }
 
   &__title {
-    @include text-format($li-title-fs, $ml-color-text-primary, 500);
+    @include text-format($si-title-fs, $ml-color-text-primary, 500);
     width: 70%;
     text-overflow: ellipsis;
     display: -webkit-box;

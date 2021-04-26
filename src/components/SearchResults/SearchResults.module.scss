@@ -1,11 +1,11 @@
 @import '../../assets/styles/variables.scss';
 
-$li-width-xl: $ml-width-xl;
-$li-width-md: $ml-width-md;
-$li-width-sm: $ml-width-sm;
+$sr-width-xl: $ml-width-xl;
+$sr-width-md: $ml-width-md;
+$sr-width-sm: $ml-width-sm;
 
 .search_results {
-  width: $li-width-xl;
+  width: $sr-width-xl;
   border-radius: $ml-border-radius;
   background-color: #fff;
   margin-bottom: 32px;
@@ -19,12 +19,12 @@ $li-width-sm: $ml-width-sm;
 
 @media (max-width: 1200px) {
   .search_results {
-    width: $li-width-md;
+    width: $sr-width-md;
   }
 }
 
 @media (max-width: 920px) {
   .search_results {
-    width: $li-width-sm;
+    width: $sr-width-sm;
   }
 }
