@@ -12,7 +12,7 @@ enum Conditions {
  * @return {string} translated string
  */
 export const setStatusText = (condition: string): string => {
-  const conditionTexts = texts['item-conditions'];
+  const conditionTexts = texts.item_conditions;
 
   switch (condition) {
     case Conditions.New:

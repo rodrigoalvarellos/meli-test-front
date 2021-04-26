@@ -3,7 +3,6 @@
 import { FC, useEffect } from 'react';
 import { RouteComponentProps } from '@reach/router';
 import texts from '../../config/text.config.json';
-// import styles from './HomePage.module.scss';
 
 interface IHomeProps extends RouteComponentProps {
   setMetaTags: Function;
@@ -23,12 +22,5 @@ export const HomePage: FC<IHomeProps> = ({ setMetaTags }) => {
     });
   }, []);
 
-  return (
-    <>
-      {/* <div className={styles.HomePage__card_container}>
-             <Card ></Card>
-
-        </div> */}
-    </>
-  );
+  return <></>;
 };

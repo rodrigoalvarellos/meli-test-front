@@ -1,7 +1,7 @@
 @import '../../assets/styles/variables.scss';
 @import '../../assets/styles/mixins/mixins.scss';
 
-.Button {
+.button {
   background-color: $ml-color-blue;
   border-radius: $ml-border-radius;
   cursor: pointer;
@@ -14,11 +14,11 @@
   @include text-format(16px, #fff);
 }
 
-.Button:focus {
+.button:focus {
   outline-color: lighten($ml-color-blue, 10%);
 }
 
-.Button:active {
+.button:active {
   transform: scale(0.98);
   background-color: darken($ml-color-blue, 10%);
 }

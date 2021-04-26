@@ -77,9 +77,9 @@ export const ResultsPage: FC<IResultsPageProps> = ({
 
   if (results === null) {
     return (
-      <div className={styles.ResultsPage__not_found}>
+      <div className={styles.results_page__not_found}>
         <Card>
-          <div className={styles.ResultsPage__not_found_content}>
+          <div className={styles.results_page__not_found_content}>
             <SearchIcon fill="#999999" />
             <p>
               {rsTexts.search_not_found} : <strong>"{query.search}"</strong>

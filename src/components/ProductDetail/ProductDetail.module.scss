@@ -17,7 +17,7 @@ $pd-description-padding: $pd-padding;
 $pd-description-title-fs: 28px;
 $pd-description-text-fs: 16px;
 
-.ProductDetail {
+.product_detail {
   border-radius: $pd-border-radous;
   background-color: #fff;
   padding: $pd-padding;
@@ -28,21 +28,16 @@ $pd-description-text-fs: 16px;
   &__content_row {
     display: flex;
     justify-content: space-between;
-    // flex-wrap: wrap;
     width: 100%;
-    // border: 1px solid green;
   }
 
   &__image_wrapper {
-    // border: 1px solid red;
     width: 100%;
     max-width: 680px;
     max-height: 680px;
     display: flex;
     justify-content: center;
     align-items: center;
-    // margin-right: 16px;
-    // margin-bottom: 16px;
   }
 
   &__image {
@@ -54,7 +49,6 @@ $pd-description-text-fs: 16px;
 
   &__detail_content {
     display: block;
-    // border: 1px solid steelblue;
     margin-left: 16px;
     width: 100%;
     min-width: 300px;
@@ -79,7 +73,6 @@ $pd-description-text-fs: 16px;
     @include text-format($pd-detail-price-fs, $ml-color-text-primary, 500);
     padding: $pd-detail-padding 0px;
     font-weight: 500;
-    // position: relative;
   }
 
   &__detail_price_decimals {
@@ -93,7 +86,6 @@ $pd-description-text-fs: 16px;
   }
 
   &__description_wrapper {
-    // border: 1px solid green;
     max-width: 680px;
     min-height: 100px;
     margin-top: 16px;
@@ -101,7 +93,6 @@ $pd-description-text-fs: 16px;
 
   &__description_title {
     @include text-format($pd-description-title-fs, $ml-color-text-primary, 500);
-    // font-weight: 500;
   }
 
   &__description_text {
@@ -113,17 +104,8 @@ $pd-description-text-fs: 16px;
 }
 
 @media (max-width: 1200px) {
-  .ProductDetail {
+  .product_detail {
     width: $pd-width-md;
-
-    // &__image_wrapper {
-    //   width: 100%;
-    //   // max-height: 400px;
-    //   // max-width:  400px;
-    //   // flex-grow: 2;
-    //   // flex-wrap: wrap;
-    //   // flex: 0 0 70%;
-    // }
 
     &__description_wrapper {
       max-width: 100%;
@@ -132,7 +114,7 @@ $pd-description-text-fs: 16px;
 }
 
 @media (max-width: 920px) {
-  .ProductDetail {
+  .product_detail {
     width: $pd-width-sm;
 
     &__content_row {
@@ -142,7 +124,6 @@ $pd-description-text-fs: 16px;
 
     &__image_wrapper {
       width: 100%;
-      // flex-grow: 1;
       max-width: 100%;
       max-height: 100%;
       margin-bottom: 0;

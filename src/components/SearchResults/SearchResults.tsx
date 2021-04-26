@@ -19,8 +19,8 @@ export interface ISearchResultsProps
  * @param items[]
  */
 export const SearchResults: FC<ISearchResultsProps> = ({ items, ...props }) => (
-  <div className={styles.SearchResults} {...props} data-testid={DATA_TESTID}>
-    <ul className={styles.SearchResults__list}>
+  <div className={styles.search_results} {...props} data-testid={DATA_TESTID}>
+    <ul className={styles.search_results__list}>
       {items?.map((item) => (
         <li key={item.id}>
           <SearchItem item={item} />
