@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import { FC, useEffect } from 'react';
 import { RouteComponentProps } from '@reach/router';
 import texts from '../../config/text.config.json';
