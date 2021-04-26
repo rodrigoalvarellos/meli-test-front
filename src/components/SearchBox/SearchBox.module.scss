@@ -7,7 +7,7 @@ $sb-width-sm: $ml-width-sm;
 
 $sb-border-radius: $ml-border-radius;
 
-.SearchBox {
+.search_box {
   background-color: $ml-color-yellow;
   display: flex;
   justify-content: center;
@@ -72,7 +72,6 @@ $sb-border-radius: $ml-border-radius;
 
   &__search_button {
     outline: none;
-    // outline-color: $ml-color-gray-2;
   }
 
   &__search_icon {
@@ -81,7 +80,7 @@ $sb-border-radius: $ml-border-radius;
 }
 
 @media (max-width: 1200px) {
-  .SearchBox {
+  .search_box {
     &__wrapper {
       width: $sb-width-md;
     }
@@ -89,7 +88,7 @@ $sb-border-radius: $ml-border-radius;
 }
 
 @media (max-width: 920px) {
-  .SearchBox {
+  .search_box {
     height: 60px;
 
     &__wrapper {

@@ -18,13 +18,13 @@ export const Breadcrumbs: FC<IBreadcrumbsProps> = ({
   categories,
   ...props
 }) => (
-  <nav className={styles.Breadcrumbs} {...props} data-testid={DATA_TESTID}>
-    <ul className={styles.Breadcrumbs__list}>
+  <nav className={styles.breadcrumbs} {...props} data-testid={DATA_TESTID}>
+    <ul className={styles.breadcrumbs__list}>
       {categories.map((cat, idx) => (
-        <li key={cat.id} className={styles.Breadcrumbs__list_item}>
+        <li key={cat.id} className={styles.breadcrumbs__list_item}>
           <Link
             to={`/items?category=${cat.id}`}
-            className={styles.Breadcrumbs__link}
+            className={styles.breadcrumbs__link}
             aria-label={cat.name}
           >
             {cat.name}

@@ -22,6 +22,9 @@
     "input_aria_label": "Ingresá lo que quieras encontrar",
     "search_btn": "Buscar"
   },
+  "search_item": {
+    "ml_shipped": "Enviado por Mercado Libre"
+  },
   "product_detail": {
     "sold": "vendido",
     "solds": "vendidos",
@@ -29,7 +32,7 @@
     "buy_btn": "Comprar",
     "product_description_title": " Descripción del producto"
   },
-  "item-conditions": {
+  "item_conditions": {
     "new": "Nuevo",
     "used": "Nsado",
     "not_specified": "No especifica"

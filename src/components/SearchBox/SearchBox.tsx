@@ -30,23 +30,23 @@ export const SearchBox: FC<ISearchBoxProps> = (props) => {
   };
 
   return (
-    <header className={styles.SearchBox} {...props} data-testid={DATA_TESTID}>
-      <div className={styles.SearchBox__wrapper}>
+    <header className={styles.search_box} {...props} data-testid={DATA_TESTID}>
+      <div className={styles.search_box__wrapper}>
         <Link
           to="/"
-          className={styles.SearchBox__image_link}
+          className={styles.search_box__image_link}
           onClick={clearSearchValue}
         >
           <img
-            className={styles.SearchBox__meli_logo}
+            className={styles.search_box__meli_logo}
             src={logo}
             alt={sbTexts.meli_logo_alt}
           />
         </Link>
 
-        <form className={styles.SearchBox__form} onSubmit={onSearch}>
+        <form className={styles.search_box__form} onSubmit={onSearch}>
           <input
-            className={styles.SearchBox__search_input}
+            className={styles.search_box__search_input}
             type="text"
             placeholder={sbTexts.input_placeholder}
             aria-label={sbTexts.input_aria_label}
@@ -58,7 +58,7 @@ export const SearchBox: FC<ISearchBoxProps> = (props) => {
 
           <button
             type="submit"
-            className={styles.SearchBox__search_button}
+            className={styles.search_box__search_button}
             aria-label={sbTexts.search_btn}
           >
             <SearchIcon aria-hidden="true" />

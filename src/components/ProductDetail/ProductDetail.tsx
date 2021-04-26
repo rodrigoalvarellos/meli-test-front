@@ -9,7 +9,7 @@ import texts from '../../config/text.config.json';
 import shippingImg from '../../assets/images/ic_shipping@2x.png';
 import noImage from '../../assets/images/no_image.png';
 
-const DATA_TESTID = 'PRODUCT_DETAIL_TESTID';
+export const DATA_TESTID = 'PRODUCT_DETAIL_TESTID';
 
 interface IProductDetail extends HTMLAttributes<HTMLDivElement> {
   product: ProductDetailItem;
@@ -26,35 +26,35 @@ export const ProductDetail: FC<IProductDetail> = ({ product, ...props }) => {
   };
 
   return (
-    <div className={styles.ProductDetail} {...props} data-testid={DATA_TESTID}>
-      <div className={styles.ProductDetail__content_row}>
-        <section className={styles.ProductDetail__image_wrapper}>
+    <div className={styles.product_detail} {...props} data-testid={DATA_TESTID}>
+      <div className={styles.product_detail__content_row}>
+        <section className={styles.product_detail__image_wrapper}>
           <img
-            className={styles.ProductDetail__image}
+            className={styles.product_detail__image}
             src={product.item.picture ? product.item.picture : noImage}
             alt={product.item.title}
           />
         </section>
-        <aside className={styles.ProductDetail__detail_content}>
-          <div className={styles.ProductDetail__detail_wrapper}>
-            <p className={styles.ProductDetail__detail_subtitle}>
+        <aside className={styles.product_detail__detail_content}>
+          <div className={styles.product_detail__detail_wrapper}>
+            <p className={styles.product_detail__detail_subtitle}>
               {`${setStatusText(product.item.condition)} - ${
                 product.item.sold_quantity
               } ${
                 product.item.sold_quantity === 1 ? pdTexts.sold : pdTexts.solds
               }`}
             </p>
-            <h1 className={styles.ProductDetail__detail_title}>
+            <h1 className={styles.product_detail__detail_title}>
               {product.item.title}
             </h1>
-            <h2 className={styles.ProductDetail__detail_price}>
+            <h2 className={styles.product_detail__detail_price}>
               {product.item.price.currency} {product.item.price.amount}
-              <span className={styles.ProductDetail__detail_price_decimals}>
+              <span className={styles.product_detail__detail_price_decimals}>
                 {product.item.price.decimals}
               </span>
               {product.item.free_shipping ? (
                 <img
-                  className={styles.ProductDetail__detail_shipping}
+                  className={styles.product_detail__detail_shipping}
                   src={shippingImg}
                   alt={pdTexts.shipping_alt}
                 />
@@ -68,11 +68,11 @@ export const ProductDetail: FC<IProductDetail> = ({ product, ...props }) => {
         </aside>
       </div>
 
-      <section className={styles.ProductDetail__description_wrapper}>
-        <h2 className={styles.ProductDetail__description_title}>
+      <section className={styles.product_detail__description_wrapper}>
+        <h2 className={styles.product_detail__description_title}>
           {pdTexts.product_description_title}
         </h2>
-        <p className={styles.ProductDetail__description_text}>
+        <p className={styles.product_detail__description_text}>
           {product.item.description}
         </p>
       </section>

@@ -1,17 +1,26 @@
-import { FC } from 'react';
-// import styles from './HomePage.module.scss';
-import { RouteComponentProps } from '@reach/router';
+/* eslint-disable react-hooks/exhaustive-deps */
 
-interface IHomeProps extends RouteComponentProps {}
+import { FC, useEffect } from 'react';
+import { RouteComponentProps } from '@reach/router';
+import texts from '../../config/text.config.json';
+
+interface IHomeProps extends RouteComponentProps {
+  setMetaTags: Function;
+}
 
 /**
  * This component represents the blank page when starting the application.
  */
-export const HomePage: FC<IHomeProps> = (props) => (
-  <>
-    {/* <div className={styles.HomePage__card_container}>
-             <Card >Hola</Card>
+export const HomePage: FC<IHomeProps> = ({ setMetaTags }) => {
+  const metaTexts = texts.header_meta_tags;
 
-        </div> */}
-  </>
-);
+  useEffect(() => {
+    setMetaTags({
+      title: `${metaTexts.title} - ${metaTexts.slogan}`,
+      description: metaTexts.description,
+      keywords: metaTexts.keys.join(',')
+    });
+  }, []);
+
+  return <></>;
+};

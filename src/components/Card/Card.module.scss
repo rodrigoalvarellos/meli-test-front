@@ -1,6 +1,8 @@
-.Card {
-  width: 100%;
-  padding: 16px;
-  // margin: 16px;
+@import '../../assets/styles/variables.scss';
+
+.card {
   background-color: #fff;
+  border-radius: $ml-border-radius;
+  padding: 16px;
+  width: 100%;
 }

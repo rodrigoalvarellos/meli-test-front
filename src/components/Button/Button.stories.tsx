@@ -8,4 +8,8 @@ const config = {
 
 export default config;
 
-export const buttonPrimary: React.FC = () => <Button>Comprar</Button>;
+export const ButtonPrimarySB: React.FC = () => (
+  <div style={{ width: '150px' }}>
+    <Button>Comprar</Button>
+  </div>
+);

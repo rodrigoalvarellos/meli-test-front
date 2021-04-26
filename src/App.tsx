@@ -34,7 +34,7 @@ export const App: FC = () => {
       <SearchBox />
 
       <Router className="App__router">
-        <HomePage path="/" />
+        <HomePage path="/" setMetaTags={setMetaTags} />
         <ResultsPage path="/items" setMetaTags={setMetaTags} />
         <ProductPage path="/items/:itemId" setMetaTags={setMetaTags} />
       </Router>
